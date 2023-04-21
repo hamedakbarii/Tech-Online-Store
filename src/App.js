@@ -19,7 +19,7 @@ export default function App() {
       <div className="relative" onPointerMove={(e)=>{
         setPointerPos({
           clientX : e.pageX ,
-          clientY : e.pageY
+          clientY : e.pageY ,
         })  ;
         console.log(e)
       }}>
