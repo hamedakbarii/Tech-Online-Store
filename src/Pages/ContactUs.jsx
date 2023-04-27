@@ -19,7 +19,7 @@ export default function ContactUs() {
 
       <form className="flex flex-col justify-center gap-5 p-4 w-full">
         <div className="flex flex-col justify-center items-start">
-          <label className="p-2 font-semibold">Your Name</label>
+          <label className="p-2 font-semibold flex items-center after:content-['*'] after:block after:text-red-500 after:ml-1">Your Name</label>
           <input
             type="text"
             placeholder="Your Name"
@@ -28,7 +28,7 @@ export default function ContactUs() {
         </div>
 
         <div className="flex flex-col justify-center items-start">
-          <label className="p-2 font-semibold">Your Email</label>
+          <label className="p-2 font-semibold flex items-center after:content-['*'] after:block after:text-red-500 after:ml-1">Your Email</label>
           <input
             type="text"
             placeholder="Your Email"
@@ -46,16 +46,7 @@ export default function ContactUs() {
         </div>
 
         <div className="flex flex-col justify-center items-start">
-          <label className="p-2 font-semibold">Your Name</label>
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="border border-[#A2A6B0] rounded-[.3rem] font-light w-full p-2"
-          />
-        </div>
-
-        <div className="flex flex-col justify-center items-start">
-          <label className="p-2 font-semibold">What's on your mind?</label>
+        <label className="p-2 font-semibold flex items-center after:content-['*'] after:block after:text-red-500 after:ml-1">What's on your mind?</label>
           <textarea
             name="textarea"
             id="textarea"
@@ -73,7 +64,7 @@ export default function ContactUs() {
         />
       </form>
 
-      <div className="bg-[#F5F7FF]  m-4 p-2 flex flex-col gap-4">
+      <div className="bg-[#F5F7FF]  m-4 p-2 flex flex-col gap-4 rounded-lg">
         <div className="flex justify-start items-start gap-2">
           <Location />
 
