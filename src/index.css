@@ -88,3 +88,38 @@ details[open] summary {
 .userAccountDetails[open] {
   height: 23rem;
 }
+.animating{
+  animation: animating .3s ease forwards;
+}
+.openAccardion{
+  animation: openAccardion .3s ease-in-out forwards;
+}
+.closeAccardion{
+  animation: closeAccardion .3s ease-in-out forwards;
+}
+@keyframes animating {
+  0%{
+    opacity: 0;
+    top: 100%;
+  }  
+  100%{
+    opacity: 1;
+    top: 2.4rem;
+  }
+}
+@keyframes closeAccardion {
+  0%{
+    transform: rotate(-180deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+@keyframes openAccardion {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-180deg);
+  }
+}
