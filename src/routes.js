@@ -5,7 +5,6 @@ import Register from "./Pages/Register";
 import ShoppingCart from "./Pages/ShoppingCart";
 import Checkout from "./Pages/Checkout";
 import AboutUs from "./Pages/AboutUs";
-import UserAccount from "./Pages/UserAccount";
 import ProductDetails from "./Pages/ProductDetails";
 
 let router = [
@@ -17,7 +16,6 @@ let router = [
   { path: "/shoppingcart", element: <ShoppingCart /> },
   { path: "/checkout", element: <Checkout /> },
   { path: "/aboutus", element: <AboutUs /> },
-  { path: "/useraccount", element: <UserAccount /> },
 ];
 
 export default router;
