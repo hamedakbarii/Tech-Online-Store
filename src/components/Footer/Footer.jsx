@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ArrowDown, Facebook, Instagram } from "../Icon";
+import {Facebook, Instagram } from "../Icon";
 import AccardionSection from "./Accardion";
 let Accardion = [
   {
