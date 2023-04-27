@@ -53,7 +53,7 @@ let UserFeedBack = () => {
                     UserFeedBackData.map((item)=>
                         <SwiperSlide className='relative p-4 px-6 rounded-lg'>
                             <div className='flex flex-col'>
-                                <p className='flex items-start text-lg text-justify before:block before:content-["“"] before:leading-[.7] before:mr-4 before:text-8xl'>
+                                <p className='flex items-start text-md text-justify before:block before:content-["“"] before:leading-[.7] before:mr-4 before:text-6xl'>
                                     {
                                         item.message
                                     }
