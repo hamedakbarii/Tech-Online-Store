@@ -6,7 +6,7 @@ let ProductLogo = () => {
             {
                 ProductLogoArray.map((itemLogo)=>
                 
-                    <div className="p-1 transation-all duration-[.2s] hover:bg-[#F5F7FF] rounded-lg hover:-translate-y-[.5rem]">
+                    <div className="p-1 transation-all duration-[.2s] hover:bg-[#F5F7FF] rounded-lg hover:-translate-y-[.5rem] blur-[.7px] hover:blur-[0px]">
                         <img src={itemLogo} className="object-center object-cover" />
                     </div>
                 
