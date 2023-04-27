@@ -1,30 +1,63 @@
-import React from "react";
-import { ArrowDown } from "../Icon";
-import { Facebook } from "../Icon";
-import { Instagram } from "../Icon";
+import { ArrowDown , Instagram , Facebook } from "../Icon";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const NavbarTop = () => {
+  const [ShowContactDetail , setShowContactDetail] = useState(false) ; 
   return (
-    <section className="bg-[#000] w-full">
-      <div className="flex justify-between items-center text-white px-4 py-1 container mx-auto relative">
-        {/*
-        <div className="absolute z-10 p-3 rounded-full left-3 top-[5%] bg-[#0156FF] scale-[.85]">
-          <Logo color="white" />
-        </div>
- */}
-
+    <section className="bg-black z-[+31] relative">
+      <div className="flex justify-between items-center text-white px-4 py-2 container mx-auto relative">
         <div className="flex items-center justify-between w-full">
-          <div className="flex items-center text-[.8rem] border-2 border-white rounded-full p-[.3rem]">
-            <p className="text-[#ACACAC]">
+          
+          
+          
+          <div className="relative flex items-center text-sm border-2 border-white rounded-full p-1 px-4 bg-black" onClick={()=>{
+            setShowContactDetail(!ShowContactDetail) ; 
+          }}>
+            <p className="text-PrimaryGray font-semibold">
               Mon-Thu : <span className="text-white"> 9:00 AM - 5:30 PM</span>
             </p>
-            <span className="ml-2">
-              <ArrowDown />
-            </span>
+            {
+              ShowContactDetail ? 
+              <>
+                <span key="arrowDropopen" className="ml-3 openAccardion transition-all">
+                  <ArrowDown size={10} />
+                </span>
+              </>
+              :
+              <>
+                <span key="arrowDropclose"  className="ml-3 closeAccardion transition-all">
+                  <ArrowDown size={10} />
+                </span>
+              </>
+            }
+            {
+              ShowContactDetail ? <><div className="absolute w-full top-full left-0 bg-black p-4 pt-2 pb-6 rounded-[0_0_1rem_1rem] animating">
+              <span className="text-sm font-semibold text-white">
+                Visit our showroom in 1234 Street Adress City Address, 1234
+              </span>
+            </div></> : null
+            }
           </div>
-          <div className="flex ">
-            <h4 className="text-[#ACACAC] text-[.8rem]">
+         
+         
+         
+         
+         
+         
+         
+         
+         
+          <span className="text-sm text-white font-bold cursor-pointer 
+          flex flex-col relative after:w-full after:block after:border-t-2 after:border-t-white 
+          after:content-[''] after:absolute after:-bottom-1 after:scale-x-0	 after:transition-all after:origin-left hover:after:scale-x-100">
+                <Link to="/contactus">Contact Us</Link>
+          </span>
+          {
+            /*
+            
+            
+                          <h4 className="text-[#ACACAC] text-[.8rem]">
               <span className="xlHeader:block hidden">
                 Visit our showroom in 1234 Street Adress City Address, 1234
               </span>
@@ -32,7 +65,8 @@ const NavbarTop = () => {
                 <Link to="/contactus">Contact Us</Link>
               </span>
             </h4>
-          </div>
+            */
+          }
         </div>
         <div className="xlHeader:flex hidden justify-center items-center gap-3">
           <h4 className="font-semibold">Call Us: (00) 1234 5678</h4>
