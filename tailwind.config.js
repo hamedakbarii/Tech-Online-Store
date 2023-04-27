@@ -18,10 +18,15 @@ module.exports = {
           '0%': { opacity : `${0}` },
           '100%': { opacity : `${1}` },
         },
+        OpenModal: {
+          '0%': { opacity : `${0}` },
+          '100%': { opacity : `${1}` },
+        },
       },
       animation: {
         'Accardion': 'Accardion .3s ease forwards',
         'Opacity': 'Accardion .8s ease forwards',
+        'OpenModal': 'OpenModal .5s ease forwards',
       },
     },
   },
