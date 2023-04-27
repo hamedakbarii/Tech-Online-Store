@@ -11,6 +11,7 @@ module.exports = {
       } , 
       colors: {
         'secondaryBlue': '#0156FF',
+        'PrimaryGray' : '#ACACAC' , 
       },
       keyframes: {
         Accardion: {
