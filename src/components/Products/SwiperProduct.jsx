@@ -36,7 +36,8 @@ let SwiperProduct = ({ ItemList, spaceBetween, slidesPerView }) => {
     >
       {ItemList &&
         ItemList.map((item,id) => (
-          <SwiperSlide className="flex flex-col p-2 bg-[#F5F7FF] rounded-lg">
+          <SwiperSlide className="flex flex-col">
+            <div className="flex flex-col rounded-lg bg-gray-100 transition-colors hover:bg-gray-200 p-2 duration-[.5s]">
             <Link key={item.id} to={`/product/${item.categoryTitle}/${item.id}`} data-cate={item.categoryTitle} data-id={item.id} onClick={()=>{store[1]('4343334')}}>
             <p className="tablet:hidden flex items-center">
               {item.avaiblity ? <Aviable /> : <OutOfStock />}
@@ -69,7 +70,7 @@ let SwiperProduct = ({ ItemList, spaceBetween, slidesPerView }) => {
                 <span className="flex items-center mr-3 mt-1">
                   <CalculateStars stars={item.stars} />
                 </span>
-                <span className="flex items-center">
+                <span className="flex items-center text-PrimaryGray">
                   reviews({item.review})
                 </span>
               </div>
@@ -80,6 +81,7 @@ let SwiperProduct = ({ ItemList, spaceBetween, slidesPerView }) => {
               </p>
             </div>
             </Link>
+            </div>
           </SwiperSlide>
         ))}
     </Swiper>
