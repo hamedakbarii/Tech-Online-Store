@@ -76,7 +76,7 @@ let SwiperProduct = ({ ItemList, spaceBetween, slidesPerView }) => {
               </div>
               <p>{item.title}</p>
               <p className="flex flex-col">
-                <del className="text-sm text-gray-700">${item.price}</del>
+                <del className="text-md text-PrimaryGray">${item.price}</del>
                 <span className="text-lg font-semibold">${item.offprice}</span>
               </p>
             </div>
