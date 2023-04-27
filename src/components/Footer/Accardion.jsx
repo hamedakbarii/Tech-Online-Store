@@ -27,8 +27,10 @@ const Accardion = ({ Data }) => {
                 FooterAccardionHandler(index, e);
               }}
             >
-              <h3 className="text-white">{item.title}</h3>
-              <ArrowDown />
+              <p className="text-white">{item.title}</p>
+              {
+                item.isAccardionOpen ? <><span className="openAccardion"><ArrowDown size={8}/></span></> : <><span className="closeAccardion"><ArrowDown size={8} /></span></>
+              }
             </div>
             {item.isAccardionOpen ? (
               <div
