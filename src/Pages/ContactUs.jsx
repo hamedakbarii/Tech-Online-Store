@@ -5,7 +5,7 @@ export default function ContactUs() {
     <>
       <div className="p-2">
         <span>
-          Home <span className="text-[##0156FF]">›</span> Contact Us
+          Home <span className="text-[#0156FF]">›</span> Contact Us
         </span>
       </div>
 
@@ -19,7 +19,9 @@ export default function ContactUs() {
 
       <form className="flex flex-col justify-center gap-5 p-4 w-full">
         <div className="flex flex-col justify-center items-start">
-          <label className="p-2 font-semibold flex items-center after:content-['*'] after:block after:text-red-500 after:ml-1">Your Name</label>
+          <label className="p-2 font-semibold flex items-center after:content-['*'] after:block after:text-red-500 after:ml-1">
+            Your Name
+          </label>
           <input
             type="text"
             placeholder="Your Name"
@@ -28,7 +30,9 @@ export default function ContactUs() {
         </div>
 
         <div className="flex flex-col justify-center items-start">
-          <label className="p-2 font-semibold flex items-center after:content-['*'] after:block after:text-red-500 after:ml-1">Your Email</label>
+          <label className="p-2 font-semibold flex items-center after:content-['*'] after:block after:text-red-500 after:ml-1">
+            Your Email
+          </label>
           <input
             type="text"
             placeholder="Your Email"
@@ -46,7 +50,9 @@ export default function ContactUs() {
         </div>
 
         <div className="flex flex-col justify-center items-start">
-        <label className="p-2 font-semibold flex items-center after:content-['*'] after:block after:text-red-500 after:ml-1">What's on your mind?</label>
+          <label className="p-2 font-semibold flex items-center after:content-['*'] after:block after:text-red-500 after:ml-1">
+            What's on your mind?
+          </label>
           <textarea
             name="textarea"
             id="textarea"
