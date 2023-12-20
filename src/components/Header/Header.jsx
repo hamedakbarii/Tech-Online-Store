@@ -1,5 +1,4 @@
-import React, { Fragment, useState } from "react";
-import Li from "./Li";
+import React, { useState } from "react";
 import Logo from "../Logo";
 import NavbarTop from "./NavbarTop";
 import {
@@ -15,6 +14,7 @@ import {
 import HamburgerMenue from "./HamburgerMenu";
 import UserProfileMenu from "./UserProfileMenu";
 import { Link } from "react-router-dom";
+
 export default function Header() {
   let navUl = [
     "Laptops",
@@ -27,20 +27,19 @@ export default function Header() {
   ];
   const [ActiveHamburger, setActiveHamburger] = useState(false);
   const [ActiveUserProfileMenu, setActiveUserProfileMenu] = useState(false);
+
   return (
-    <Fragment>
+    <>
       <NavbarTop />
 
-      <nav
-        className="xlHeader:container w-full block mx-auto px-4 py-2 
-xlHeader:bg-white bg-[#0156FF] sticky top-0 z-[+30]"
-      >
+      <nav className="xl:container w-full block mx-auto px-4 py-2 xl:bg-white bg-[#0156FF] sticky top-0 z-[+30]">
         <div className="flex items-center justify-between container mx-auto px-2 gap-4 w-full">
           <div className="flex items-center gap-2">
             <HamburgerMenue HandleHamburgerActivation={setActiveHamburger} />
+
             {ActiveHamburger ? (
               <div className="animate-OpenModal absolute top-0 left-0 w-full bg-white px-5 py-2 ">
-                <div className="flex flex-col">
+                <div className="flex flex-col ">
                   <div className="flex items-center justify-between ">
                     <span>
                       <Icon color={"#0156FF"} />
@@ -56,13 +55,14 @@ xlHeader:bg-white bg-[#0156FF] sticky top-0 z-[+30]"
 
                   <span className="border-b-2 border-gray-400 mt-4"></span>
 
-                  <div className="flex flex-col mt-4 gap-2">
+                  <div className="flex flex-col mt-4 gap-6">
                     <div className="flex items-center justify-between">
                       <p className="text-lg font-base">Laptops</p>
                       <span className="-rotate-[90deg]">
                         <ArrowDown color={"black"} />
                       </span>
                     </div>
+
                     <div className="flex items-center justify-between">
                       <p className="text-lg font-base">Desktop PCs</p>
                       <span className="-rotate-[90deg]">
@@ -108,18 +108,22 @@ xlHeader:bg-white bg-[#0156FF] sticky top-0 z-[+30]"
               </div>
             ) : null}
           </div>
+
           <div className="flex items-center w-full bg-white p-2 py-1 rounded-full">
             <Magnfier />
+
             <input
               className="w-full p-2 focus:outline-0 focus:border-0 bg-transparent"
               type="search"
               placeholder="Search Here"
             />
           </div>
+
           <div className="flex items-center gap-2">
             <Link to="./shoppingcart">
               <ShopingCart />
             </Link>
+
             <UserIcon
               HandleUserDataShow={setActiveUserProfileMenu}
               UserDataShow={ActiveUserProfileMenu}
@@ -130,24 +134,28 @@ xlHeader:bg-white bg-[#0156FF] sticky top-0 z-[+30]"
           </div>
         </div>
 
-        <div className="xlHeader:flex items-center justify-between hidden">
+        <div className="xl:flex items-center justify-between hidden">
           <Logo />
+
           <ul className="flex justify-center items-center px-2">
             {navUl.map((item) => (
-              <Li key={item} data={item} />
+              <li key={item} data={item} />
             ))}
             <button className="py-1 transition-all px-5 rounded-2xl font-semibold text-[#0156FF] mx-2 hover:bg-[#0156FF] hover:text-white border-2 border-solid border-secondaryBlue">
               Our Deals
             </button>
           </ul>
+
           <div className="flex justify-center items-center gap-4">
             <Search />
+
             <div className="relative">
               <Shop />
               <span className="absolute font-semibold text-[.7rem] -top-2 -right-2 bg-[#0156FF] text-white rounded-full w-4 h-4 flex justify-center items-center">
                 2
               </span>
             </div>
+
             <img
               src="./assets/profile/hamed.jpg"
               alt="hamed"
@@ -156,6 +164,6 @@ xlHeader:bg-white bg-[#0156FF] sticky top-0 z-[+30]"
           </div>
         </div>
       </nav>
-    </Fragment>
+    </>
   );
 }

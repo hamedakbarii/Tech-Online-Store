@@ -1,4 +1,4 @@
-import {Facebook, Instagram } from "../Icon";
+import { Facebook, Instagram } from "../Icon";
 import AccardionSection from "./Accardion";
 let Accardion = [
   {
@@ -106,42 +106,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-between items-center p-2 pt-4">
+        <div className="flex flex-col gap-6 justify-between items-center p-2 pt-4">
           <div className="flex justify-center items-center gap-2">
-            <Facebook color={'gray'} size={20} />
-            <Instagram color={'gray'} size={20} />
+            <a href="https://www.instagram.com/hamedakbrii/?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D">
+              <Instagram color={"gray"} size={20} />
+            </a>
           </div>
           <span className="text-[#A2A6B0] text-sm">
-            Copyright © 2020 Shop Pty. Ltd.
+            Made with ❤️ ( Hamed Akbari )
           </span>
-        </div>
-
-        <div className="grid grid-cols-[repeat(5,3rem)] justify-items-center place-content-center py-4">
-          <img
-            src="./assets/FooterImg/paypal.png"
-            alt="paypal"
-            className="justify-self-center cursor-pointer"
-          />
-          <img
-            src="./assets/FooterImg/visa.png"
-            alt="visa"
-            className="justify-self-center cursor-pointer"
-          />
-          <img
-            src="./assets/FooterImg/maestro.png"
-            alt="maestro"
-            className="justify-self-center cursor-pointer"
-          />
-          <img
-            src="./assets/FooterImg/discover.png"
-            alt="discover"
-            className="justify-self-center cursor-pointer"
-          />
-          <img
-            src="./assets/FooterImg/american-express.png"
-            alt="american-express"
-            className="justify-self-center cursor-pointer"
-          />
         </div>
       </footer>
     </>

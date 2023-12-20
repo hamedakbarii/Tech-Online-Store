@@ -1,12 +1,20 @@
+import { Link, useLocation } from "react-router-dom";
 import { Email, Location, Phone, Watch } from "../components/Icon";
 import OurServices from "../components/OurServices";
+import { useEffect } from "react";
+
 export default function ContactUs() {
+  const location = useLocation();
+  const thisRoute = location.pathname.replace("/", "");
+
   return (
     <>
       <div className="p-2">
-        <span>
-          Home <span className="text-[#0156FF]">›</span> Contact Us
-        </span>
+        <div className="flex justify-start items-center gap-2 my-2">
+          <Link to={"/"}>Home</Link>
+          <span className="text-[#0156FF]">›</span>
+          <span>{thisRoute}</span>
+        </div>
       </div>
 
       <div className="flex flex-col justify-center items-start p-2">
@@ -76,7 +84,7 @@ export default function ContactUs() {
 
           <div>
             <h3 className="font-semibold">Address:</h3>
-            <h4>1234 Street Adress, City Address, 1234</h4>
+            <h4>Tehran , Iran</h4>
           </div>
         </div>
         <div className="flex justify-start items-start gap-2">
@@ -84,7 +92,7 @@ export default function ContactUs() {
 
           <div>
             <h3 className="font-semibold">Phone:</h3>
-            <h4>(00)1234 5678</h4>
+            <h4>+98 9377550980</h4>
           </div>
         </div>
         <div className="flex justify-start items-start gap-2">
@@ -102,7 +110,7 @@ export default function ContactUs() {
           <Email />
           <div>
             <h3 className="font-semibold">E-mail:</h3>
-            <h4>shop@email.com</h4>
+            <h4>hamedakbariwork@gmail.com</h4>
           </div>
         </div>
       </div>
