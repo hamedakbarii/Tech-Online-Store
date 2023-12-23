@@ -1,14 +1,16 @@
 import React from "react";
 import OurServices from "../components/OurServices";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   return (
     <div>
-      <div className="p-4">
-        <span>
-          Home <span className="text-[##0156FF]">›</span> Customer Login
-        </span>
+      <div className="flex justify-start items-center gap-2 p-4">
+        <Link to={"/"}>Home</Link>
+        <span className="text-[#0156FF]">›</span>
+        <span>Customer Login</span>
       </div>
+
       <h3 className="p-4">Customer Login</h3>
       <section className="p-2 bg-[#F5F7FF] mx-4">
         <h4 className="font-bold">Registered Customers</h4>
@@ -61,6 +63,7 @@ const Register = () => {
           Create An Account
         </button>
       </section>
+
       <section className="bg-[#F5F7FF] w-full p-2">
         <OurServices />
       </section>

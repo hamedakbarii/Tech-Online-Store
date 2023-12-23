@@ -9,6 +9,7 @@ function ProductDetails() {
   let { category } = useParams();
   let { id } = useParams();
   const [ValidCategory, setValidCategory] = useState("wait");
+
   useEffect(() => {
     let ProductCategories = [
       "newCategory",
@@ -29,6 +30,7 @@ function ProductDetails() {
       }, 3000);
     }
   }, []);
+
   const store = useContext(ProductToBuy);
   let result = products.filter(
     (item) => item.id === Number(id) && item.categoryTitle === category
@@ -38,7 +40,7 @@ function ProductDetails() {
     <div>
       {store[0]}
       {ValidCategory === "wait" ? (
-        <p>waiting</p>
+        <p>Loading..</p>
       ) : ValidCategory ? (
         <ProductPage data={result} />
       ) : (

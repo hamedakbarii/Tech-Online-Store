@@ -57,7 +57,7 @@ const NavbarTop = () => {
           </span>
         </div>
         <div className="xlHeader:flex hidden justify-center items-center gap-3">
-          <h4 className="font-semibold">Call Us: +989377550980</h4>
+          <h4 className="font-semibold">Call Us: +98 9377550980</h4>
 
           <a href="https://www.instagram.com/hamedakbrii/?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D">
             <Instagram />

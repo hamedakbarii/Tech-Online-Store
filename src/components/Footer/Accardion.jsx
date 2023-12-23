@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowDown, ArrowUp } from "../Icon";
+
 const Accardion = ({ Data }) => {
   const [Accardion, setAccardion] = useState(Data);
   let FooterAccardionHandler = (id, e) => {
@@ -15,6 +16,7 @@ const Accardion = ({ Data }) => {
     }
     setAccardion(Temp);
   };
+
   return (
     <>
       {Accardion &&
@@ -28,9 +30,19 @@ const Accardion = ({ Data }) => {
               }}
             >
               <p className="text-white">{item.title}</p>
-              {
-                item.isAccardionOpen ? <><span className="openAccardion"><ArrowDown size={8}/></span></> : <><span className="closeAccardion"><ArrowDown size={8} /></span></>
-              }
+              {item.isAccardionOpen ? (
+                <>
+                  <span className="openAccardion">
+                    <ArrowDown size={8} />
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="closeAccardion">
+                    <ArrowDown size={8} />
+                  </span>
+                </>
+              )}
             </div>
             {item.isAccardionOpen ? (
               <div
@@ -53,7 +65,7 @@ const Accardion = ({ Data }) => {
                 className={`flex flex-col text-white gap-2 pl-4 overflow-hidden transition-all [&>*:last-child]:pb-4`}
                 key="acc"
               >
-                {item.accardionContent.map((accardion,index) => (
+                {item.accardionContent.map((accardion, index) => (
                   <a key={index}>
                     <span>{accardion}</span>
                   </a>
@@ -66,38 +78,3 @@ const Accardion = ({ Data }) => {
   );
 };
 export default Accardion;
-/*
-
-              Accardion.map((item , id)=>
-                <>
-                  {
-                    item.isAccardionOpen ?                   <div className={`flex flex-col text-white gap-1 pl-4 overflow-hidden transition-all duration-[.3s]`} style={{height : `${item.accardionContentHeight}px`}}> 
-                    {
-                      item.accardionContent.map((accardion)=>
-                      <a>
-                        <span>
-                          {
-                            accardion
-                          }
-                        </span>
-                      </a>)
-                    }
-                  </div> :                   <div className="flex flex-col text-white gap-1 pl-4 overflow-hidden h-0 transition-all duration-[.3s]"> 
-                    {
-                      item.accardionContent.map((accardion)=>
-                      <a>
-                        <span>
-                          {
-                            accardion
-                          }
-                        </span>
-                      </a>)
-                    }
-                  </div>
-                  }
-                </>
-              )
-
-
-
-*/

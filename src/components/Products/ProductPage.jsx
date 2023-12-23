@@ -83,7 +83,7 @@ let ProductSpec = () => {
 const ProductPage = ({ data }) => {
   const [productCount, setProductCount] = useState(1);
   const [productSec, setProductSec] = useState("About Product");
- 
+
   const [ProductInformationChanger, setProductInformationChanger] = useState([
     {
       title: "About Product",
@@ -144,9 +144,7 @@ const ProductPage = ({ data }) => {
           </a>
         </div>
       </div>
-      {/*
-                about product section
-            */}
+
       <div className="flex flex-col mt-4">
         <div className="flex items-center">
           {ProductInformationChanger.map((item, index) =>

@@ -1,5 +1,9 @@
-import { Facebook, Instagram } from "../Icon";
+import { Instagram } from "../Icon";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaTelegram, FaGithub } from "react-icons/fa";
+import { PiCursorClickFill } from "react-icons/pi";
 import AccardionSection from "./Accardion";
+
 let Accardion = [
   {
     title: "Pc Parts",
@@ -50,9 +54,9 @@ let Address = [
   {
     title: "Address",
     accardionContent: [
-      "1234 Street Adress, City Address, 1234",
-      "(00)1234 5678",
-      "shop@email.com",
+      "Tehran , Iran",
+      "(+98) 9377550980",
+      "hamedakbariwork@gmail.com",
     ],
     isAccardionOpen: false,
     accardionContentHeight: `0`,
@@ -111,7 +115,24 @@ export default function Footer() {
             <a href="https://www.instagram.com/hamedakbrii/?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D">
               <Instagram color={"gray"} size={20} />
             </a>
+
+            <a href="https://x.com/Hamedakbrii">
+              <FaSquareXTwitter className="text-white text-xl" />
+            </a>
+
+            <a href="https://t.me/hamedakbrii">
+              <FaTelegram className="text-white text-xl" />
+            </a>
+
+            <a href="https://github.com/hamedakbarii">
+              <FaGithub className="text-white text-xl" />
+            </a>
+
+            <a href="https://hamedakbari.vercel.app">
+              <PiCursorClickFill className="text-white text-xl" />
+            </a>
           </div>
+
           <span className="text-[#A2A6B0] text-sm">
             Made with ❤️ ( Hamed Akbari )
           </span>
