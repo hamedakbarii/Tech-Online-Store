@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useImmer } from "use-immer";
-import ProductRouter from "./ProductRouter";
 import FilterItems from "./../FilterItems";
 import PaginationProducts from "./PaginationProducts";
+import { Link, useLocation } from "react-router-dom";
 
 const ProductsPage = () => {
   const [filter, setFilter] = useImmer({
@@ -15,13 +15,18 @@ const ProductsPage = () => {
   });
   const [FiltersShow, setFilterShow] = useState(false);
   const [ActionFilterHandler, setActionFilterHandler] = useState();
-  useEffect(() => {
-    console.log([...filter.price].sort((a, b) => a[0] - b[0]));
-  }, [filter]);
+
+  const location = useLocation();
+  const thisRoute = location.pathname.replace("/allproducts", "All Products");
 
   return (
     <>
-      <ProductRouter />
+      <div className="flex justify-start items-center gap-2 p-4">
+        <Link to={"/"}>Home</Link>
+        <span className="text-secondaryBlue text-lg">›</span>
+        <span>{thisRoute}</span>
+      </div>
+
       <FilterItems
         filter={filter}
         setFilter={setFilter}
@@ -30,6 +35,7 @@ const ProductsPage = () => {
         ActionFilterHandler={ActionFilterHandler}
         setActionFilterHandler={setActionFilterHandler}
       />
+
       <PaginationProducts
         filter={filter}
         FiltersShow={FiltersShow}

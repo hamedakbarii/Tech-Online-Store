@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUp, ZipIcon } from "../Icon";
+import { Link } from "react-router-dom";
 
 const CountryList = [
   "Afghanistan",
@@ -280,6 +281,7 @@ const ShoppingCartSummerySection = () => {
             >
               <div className="flex flex-col gap-2">
                 <label className="font-semibold">Country</label>
+
                 <select
                   defaultValue=""
                   id="cars"
@@ -291,6 +293,7 @@ const ShoppingCartSummerySection = () => {
                     key="empty option"
                     className="w-[5rem] focus:w-[5rem] overflow-hidden"
                   ></option>
+
                   {CountryList.map((item, id) => (
                     <option
                       value={item}
@@ -302,22 +305,26 @@ const ShoppingCartSummerySection = () => {
                   ))}
                 </select>
               </div>
+
               <div className="flex flex-col gap-2">
                 <label className="font-semibold">State/Province</label>
                 <input
                   type="text"
-                  className="px-[.5rem] py-2 w-full px-[.5rem] py-2 border border-black focus:bg-white bg-white rounded"
+                  className="px-[.5rem] py-2 w-full border border-black focus:bg-white bg-white rounded"
                 />
               </div>
+
               <div className="flex flex-col gap-2">
                 <label className="font-semibold">Zip/Postal Code</label>
                 <input
                   type="text"
-                  className="px-[.5rem] py-2 w-full px-[.5rem] py-2 border border-black focus:bg-white bg-white rounded"
+                  className="px-[.5rem] py-2 w-full border border-black focus:bg-white bg-white rounded"
                 />
               </div>
+
               <div className="flex flex-col gap-2">
                 <p className="font-semibold">Standard Rate</p>
+
                 <div className="flex items-start gap-3">
                   <input
                     checked
@@ -327,14 +334,17 @@ const ShoppingCartSummerySection = () => {
                     name="rater"
                     value="standardrate"
                   />
+
                   <label className="w-full" for="standardrate">
                     Price may vary depending on the item/destination. Shop Staff
                     will contact you. $21.00
                   </label>
                 </div>
               </div>
+
               <div className="flex flex-col gap-2">
                 <p className="font-semibold">Pickup From Store</p>
+
                 <div className="flex items-start gap-3">
                   <input
                     className="w-5 h-5"
@@ -343,6 +353,7 @@ const ShoppingCartSummerySection = () => {
                     name="rater"
                     value="standardrate"
                   />
+
                   <label className="w-full" for="PickupFromStore">
                     1234 Street Adress, City Address, 1234
                   </label>
@@ -357,20 +368,26 @@ const ShoppingCartSummerySection = () => {
             <p>Apply Discount Code</p>
             <ArrowUp size="8" />
           </div>
+
           <div className="flex flex-col gap-2">
             <label for="discount" className="font-semibold">
               Enter discount code
             </label>
+
             <input
               placeholder="Enter Discount code"
               type="text"
               id="discount"
               name="discount"
-              className="px-[.5rem] py-2 w-full px-[.5rem] py-2 border border-black focus:bg-white bg-white rounded"
+              className="px-[.5rem] py-2 w-full border border-black focus:bg-white bg-white rounded"
             />
-            <button className="w-full px-4 py-2 border-2 border-secondaryBlue transition-all duration-[.3s] text-secondaryBlue bg-transparent hover:bg-secondaryBlue hover:text-white font-semibold rounded-full mt-3">
+
+            <Link
+              to={"/checkout"}
+              className="w-full px-4 py-2 border-2 border-secondaryBlue transition-all duration-[.3s] text-secondaryBlue bg-transparent hover:bg-secondaryBlue hover:text-white font-semibold rounded-full mt-3"
+            >
               Check Out with Multiple Addresses
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -385,39 +402,56 @@ const ShoppingCartSummerySection = () => {
               <p className="font-semibold">Shipping</p>
               <p className="font-semibold">$21.00</p>
             </div>
+
             <p className="text-gray-500 mt-2 text-sm">
               (Standard Rate - Price may vary depending on the item/destination.
               Shop Staff will contact you.)
             </p>
           </div>
+
           <div className="flex items-center justify-between">
             <p className="font-semibold">Tax</p>
             <p className="font-semibold">$1.91</p>
           </div>
+
           <div className="flex items-center justify-between">
             <p className="font-semibold">GST (10%)</p>
             <p className="font-semibold">$1.91</p>
           </div>
+
           <div className="flex items-center justify-between">
             <p className="font-semibold">Order Total</p>
             <p className="font-semibold">$13,068.00</p>
           </div>
+
           <div className="grid grid-cols-[1fr] gap-4">
-            <button className="text-white text-center border-2 flex justify-center border-[#0156FF] cursor-pointer bg-[#0156FF] py-2 font-semibold  rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF] self-center">
+            <Link
+              to={"/checkout"}
+              className="text-white text-center border-2 flex justify-center border-[#0156FF] cursor-pointer bg-[#0156FF] py-2 font-semibold  rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF] self-center"
+            >
               Proceed to Checkout self-center
-            </button>
-            <button className="bg-[orange] text-black text-center flex justify-center border-2 border-[orange] cursor-pointer py-2 font-semibold  rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF] self-center">
+            </Link>
+
+            <Link
+              to={"/checkout"}
+              className="bg-[orange] text-black text-center flex justify-center border-2 border-[orange] cursor-pointer py-2 font-semibold  rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF] self-center"
+            >
               Proceed to Checkout
-            </button>
-            <button className="text-gray-500  text-center border-2 flex justify-center border-gray-500 cursor-pointer py-2 font-semibold  rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF] self-center">
+            </Link>
+
+            <Link
+              to={"/checkout"}
+              className="text-gray-500  text-center border-2 flex justify-center border-gray-500 cursor-pointer py-2 font-semibold  rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF] self-center"
+            >
               Checkout with Multiple Addresses
-            </button>
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="flex items-center justify-center gap-2 mt-4 w-full">
         <ZipIcon />
+
         <a
           href="#"
           className="max-w-[12rem] text-sm leading-5 flex items-center before:h-7 before:mr-2 before:block before:content-[''] before:border before:rounded-full before:border-secondaryBlue "

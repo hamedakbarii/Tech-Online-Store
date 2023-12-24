@@ -2,7 +2,6 @@ import React from "react";
 import ShoppingCartSummerySection from "./ShoppingCartSummerySection";
 import CartShoppingCart from "./CartShoppingCart";
 import Ourservices from "../OurServices";
-import { Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const ShoppingCartComp = () => {
@@ -10,7 +9,7 @@ const ShoppingCartComp = () => {
   const thisRoute = location.pathname.replace("/", "");
 
   return (
-    <Fragment>
+    <>
       <div className="container mx-auto px-2">
         <div className="flex justify-start items-center gap-2 my-2">
           <Link to={"/"}>Home</Link>
@@ -25,7 +24,7 @@ const ShoppingCartComp = () => {
         <span className="w-full block my-4 border-t-2 border-t-gray-200"></span>
       </div>
       <Ourservices />
-    </Fragment>
+    </>
   );
 };
 
