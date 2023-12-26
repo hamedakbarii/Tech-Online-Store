@@ -2,11 +2,11 @@ import Home from "./Pages/Home";
 import ContactUs from "./Pages/ContactUs";
 import Register from "./Pages/Register";
 import Checkout from "./Pages/Checkout";
-import AboutUs from "./Pages/AboutUs";
 import ProductDetails from "./Pages/ProductDetails";
 import ShoppingCartComp from "./components/ShoppingCart/ShoppingCartComp";
 import ProductsPage from "./components/Products/ProductsPage";
 import FAQ from "./components/FAQ";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 let router = [
   { path: "/", element: <Home /> },

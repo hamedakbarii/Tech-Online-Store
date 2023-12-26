@@ -19,7 +19,7 @@ const ProductsPage = () => {
   const location = useLocation();
   const thisRoute = location.pathname.replace("/allproducts", "All Products");
 
-  return (
+  return ( 
     <>
       <div className="flex justify-start items-center gap-2 p-4">
         <Link to={"/"}>Home</Link>

@@ -1,5 +1,4 @@
 import React from "react";
-import CheckoutRouter from "../components/Checkout/CheckoutRouter";
 import CheckoutForm from "../components/Checkout/CheckoutForm";
 import OrderSummery from "../components/Checkout/OrderSummery";
 import OurServices from "../components/OurServices";
