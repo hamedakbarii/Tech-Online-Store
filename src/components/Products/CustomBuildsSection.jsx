@@ -2,15 +2,17 @@ import React from "react";
 import SwiperProduct from "./SwiperProduct";
 import ProductsContainer from "./ProductsContainer";
 import ProductSectionBanner from "./ProductSectionBanner";
-import {customBuildsProducts} from "./../../utils"
-const ProductSection = (children) => {
+import { customBuildsProducts } from "./../../utils";
+
+const ProductSection = () => {
   return (
     <ProductsContainer>
       <ProductSectionBanner
         src={"assets/CustomBuilds/image30.png"}
         title={"Custom Builds"}
       />
-      <div className="pl-2 mt-4">
+
+      <div className="sm:hidden">
         {
           <SwiperProduct
             ItemList={customBuildsProducts}
@@ -18,7 +20,7 @@ const ProductSection = (children) => {
             spaceBetween={30}
           />
         }
-      </div>
+      </div>f
     </ProductsContainer>
   );
 };

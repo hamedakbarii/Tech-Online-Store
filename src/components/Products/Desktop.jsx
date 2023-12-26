@@ -1,7 +1,8 @@
 import ProductsContainer from "./ProductsContainer";
 import ProductSectionBanner from "./ProductSectionBanner";
 import SwiperProduct from "./SwiperProduct";
-import {desktopProductsInfo} from "./../../utils"
+import { desktopProductsInfo } from "./../../utils";
+
 let Desktop = () => {
   return (
     <ProductsContainer>
@@ -9,7 +10,8 @@ let Desktop = () => {
         src={"./assets/Desktop/DesktopLaptop.png"}
         title={"Desktops"}
       />
-      <div className="pl-2 mt-4">
+
+      <div>
         {
           <SwiperProduct
             ItemList={desktopProductsInfo}

@@ -2,15 +2,16 @@ import ProductsContainer from "./ProductsContainer";
 import ProductSectionBanner from "./ProductSectionBanner";
 import SwiperProduct from "./SwiperProduct";
 import { MsiProductsInfo } from "../../utils";
+
 const ProductItem = () => {
- 
   return (
     <ProductsContainer>
       <ProductSectionBanner
         src={"assets/MsiLaptops/MsiLaptopBanner.png"}
         title={"Msi Laptops"}
       />
-      <div className="pl-2 mt-4">
+
+      <div>
         {
           <SwiperProduct
             ItemList={MsiProductsInfo}

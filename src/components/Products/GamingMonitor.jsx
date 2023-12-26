@@ -1,7 +1,8 @@
 import ProductsContainer from "./ProductsContainer";
 import ProductSectionBanner from "./ProductSectionBanner";
 import SwiperProduct from "./SwiperProduct";
-import {gamingMonitorProducts} from "./../../utils"
+import { gamingMonitorProducts } from "./../../utils";
+
 let GamingMonitor = () => {
   return (
     <ProductsContainer>
@@ -9,7 +10,8 @@ let GamingMonitor = () => {
         src={"./assets/GamingMonitor/GamingMonitorBanner.png"}
         title={"Gaming Monitor"}
       />
-      <div className="pl-2 mt-4">
+
+      <div>
         {
           <SwiperProduct
             ItemList={gamingMonitorProducts}
