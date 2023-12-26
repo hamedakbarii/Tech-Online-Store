@@ -25,6 +25,7 @@ export default function Header() {
     "All Other Products",
     "Repairs",
   ];
+
   const [ActiveHamburger, setActiveHamburger] = useState(false);
   const [ActiveUserProfileMenu, setActiveUserProfileMenu] = useState(false);
 
@@ -32,7 +33,7 @@ export default function Header() {
     <>
       <NavbarTop />
 
-      <nav className="xl:container w-full block mx-auto px-4 py-2 xl:bg-white bg-[#0156FF] sticky top-0 z-[+30]">
+      <nav className="w-full block mx-auto px-4 py-2 xl:bg-white bg-[#0156FF] sticky top-0 z-20">
         <div className="flex items-center justify-between container mx-auto px-2 gap-4 w-full">
           <div className="flex items-center gap-2">
             <HamburgerMenue HandleHamburgerActivation={setActiveHamburger} />
@@ -120,7 +121,7 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Link to="./shoppingcart">
+            <Link to="/shoppingcart">
               <ShopingCart />
             </Link>
 

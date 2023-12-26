@@ -20,7 +20,7 @@ const ProductSection = () => {
             spaceBetween={30}
           />
         }
-      </div>f
+      </div>
     </ProductsContainer>
   );
 };
