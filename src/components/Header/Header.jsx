@@ -130,7 +130,10 @@ export default function Header() {
               UserDataShow={ActiveUserProfileMenu}
             />
             {ActiveUserProfileMenu ? (
-              <UserProfileMenu toggleProfile={setActiveUserProfileMenu} />
+              <UserProfileMenu
+                toggleProfile={setActiveUserProfileMenu}
+                ActiveUserProfileMenu={ActiveUserProfileMenu}
+              />
             ) : null}
           </div>
         </div>

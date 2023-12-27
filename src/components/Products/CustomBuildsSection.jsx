@@ -12,7 +12,7 @@ const ProductSection = () => {
         title={"Custom Builds"}
       />
 
-      <div className="sm:hidden">
+      <div className="">
         {
           <SwiperProduct
             ItemList={customBuildsProducts}

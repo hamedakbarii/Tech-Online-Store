@@ -47,6 +47,10 @@ let Hero = () => {
           >
             <RightSideIcon color="white" />
           </div>
+
+          <span className="absolute -top-1 right-0 text-black text-sm p-2">
+            {bg} / 3
+          </span>
         </div>
       </div>
     </div>
