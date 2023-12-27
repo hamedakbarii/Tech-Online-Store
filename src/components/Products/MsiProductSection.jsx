@@ -2,8 +2,31 @@ import ProductsContainer from "./ProductsContainer";
 import ProductSectionBanner from "./ProductSectionBanner";
 import SwiperProduct from "./SwiperProduct";
 import { MsiProductsInfo } from "../../utils";
+import { useEffect, useState } from "react";
 
 const ProductItem = () => {
+  const [slidesPerView, setSlidesPerView] = useState(1.5);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const viewportWidth = window.innerWidth;
+
+      if (viewportWidth >= 768) {
+        setSlidesPerView(4.5);
+      } else {
+        setSlidesPerView(1.5);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <ProductsContainer>
       <ProductSectionBanner
@@ -11,15 +34,11 @@ const ProductItem = () => {
         title={"Msi Laptops"}
       />
 
-      <div>
-        {
-          <SwiperProduct
-            ItemList={MsiProductsInfo}
-            slidesPerView={1.5}
-            spaceBetween={30}
-          />
-        }
-      </div>
+      <SwiperProduct
+        ItemList={MsiProductsInfo}
+        slidesPerView={slidesPerView}
+        spaceBetween={30}
+      />
     </ProductsContainer>
   );
 };
