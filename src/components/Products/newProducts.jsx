@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import SwiperProduct from "./SwiperProduct";
-import { newProducts } from "./../../utils";
+import { newProducts } from "../../utils";
 import { useEffect, useState } from "react";
 
 let Products = () => {

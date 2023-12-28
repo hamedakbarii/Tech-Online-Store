@@ -104,8 +104,6 @@ const ProductPage = ({ data }) => {
     },
   ]);
 
-  const [ProductInformationChangerIndex, setProductInformationChangerIndex] =
-    useState(0);
   let ProductInformationFunctionHandler = (index, item) => {
     let temp = [
       {
@@ -183,7 +181,7 @@ const ProductPage = ({ data }) => {
 
         <div className="block px-4 mt-2">
           <h3 className="text-3xl font-bold mt-2">MSI MPG Trident 3</h3>
-          <p className="text-secondaryBlue font-[400] mt-2">
+          <p className="text-secondaryBlue font-normal mt-2">
             Be the first to review this product
           </p>
         </div>
@@ -198,7 +196,7 @@ const ProductPage = ({ data }) => {
 
         <div className="px-4 flex flex-col gap-2">
           <div className="flex items-center justify-between gap-4 mt-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 border px-3 rounded-lg">
               <span>{productCount}</span>
 
               <div className="flex flex-col">
@@ -227,20 +225,18 @@ const ProductPage = ({ data }) => {
             </div>
 
             <div className="flex tablet:flex-row flex-col w-full gap-2">
-              <button className="h-12 px-6 w-[100%] flex items-center justify-center bg-secondaryBlue text-white border-2 border-transparent transation-all duration-[.2s] hover:text-secondaryBlue hover:bg-transparent hover:border-secondaryBlue rounded-full text-lg font-semibold">
+              <button className="h-12 px-6 w-full flex items-center justify-center bg-secondaryBlue text-white border-2 border-transparent transation-all duration-[.2s] hover:text-secondaryBlue hover:bg-transparent hover:border-secondaryBlue rounded-full text-lg font-semibold">
                 Add to Cart
               </button>
 
-              <button className="h-12 px-6 w-[100%] flex items-center justify-center bg-[#FFB800] text-white border-2 border-transparent transation-all duration-[.2s] hover:text-secondaryBlue hover:bg-transparent hover:border-[#FFB800] rounded-full text-lg font-semibold">
+              <button className="h-12 px-6 w-full flex items-center justify-center bg-[#FFB800] text-white border-2 border-transparent transation-all duration-[.2s] hover:text-secondaryBlue hover:bg-transparent hover:border-[#FFB800] rounded-full text-lg font-semibold">
                 <PayPalIconSvg />
               </button>
             </div>
           </div>
 
-          <div className="w-full flex justify-center text-lg font-semibold mt-2">
-            <p>
-              On Sale from <span className="font-[600]">$6,000.43</span>
-            </p>
+          <div className="w-full flex justify-center text-lg font-semibold py-2">
+            On Sale from <span className="font-semibold">$6,000.43</span>
           </div>
         </div>
       </div>

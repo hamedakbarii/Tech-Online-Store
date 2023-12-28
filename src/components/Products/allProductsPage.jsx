@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useImmer } from "use-immer";
-import FilterItems from "./../FilterItems";
+import FilterItems from "../FilterItems";
 import PaginationProducts from "./PaginationProducts";
 import { Link, useLocation } from "react-router-dom";
 
@@ -19,12 +19,12 @@ const ProductsPage = () => {
   const location = useLocation();
   const thisRoute = location.pathname.replace("/allproducts", "All Products");
 
-  return ( 
+  return (
     <>
       <div className="flex justify-start items-center gap-2 p-4">
         <Link to={"/"}>Home</Link>
         <span className="text-secondaryBlue text-lg">›</span>
-        <span>{thisRoute}</span>
+        <Link to={"/allproducts"}>{thisRoute}</Link>
       </div>
 
       <FilterItems

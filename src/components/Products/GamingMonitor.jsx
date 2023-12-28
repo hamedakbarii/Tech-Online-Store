@@ -12,7 +12,7 @@ let GamingMonitor = () => {
       const viewportWidth = window.innerWidth;
 
       if (viewportWidth >= 768) {
-        setSlidesPerView(4.5);
+        setSlidesPerView(4);
       } else {
         setSlidesPerView(1.5);
       }

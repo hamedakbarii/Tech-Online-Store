@@ -4,7 +4,7 @@ import Register from "./Pages/Register";
 import Checkout from "./Pages/Checkout";
 import ProductDetails from "./Pages/ProductDetails";
 import ShoppingCartComp from "./components/ShoppingCart/ShoppingCartComp";
-import ProductsPage from "./components/Products/ProductsPage";
+import ProductsPage from "./components/Products/allProductsPage";
 import FAQ from "./components/FAQ";
 import AboutUs from "./components/AboutUs/AboutUs";
 

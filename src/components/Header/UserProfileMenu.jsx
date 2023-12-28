@@ -27,10 +27,10 @@ export default function UserProfileMenu({
     <>
       <div
         ref={modalRef}
-        className="absolute top-full right-0 w-full md:w-60  bg-white p-2 flex flex-col after:block after:absolute after:content-[''] after:right-[10%] md:after:right-[50%] after:p-2 after:bg-white after:rotate-[45deg] after:-top-2 hamed"
+        className="absolute top-full right-0 w-full md:w-60 bg-white shadow-lg p-2 flex flex-col after:block after:absolute after:content-[''] after:right-[10%] md:after:right-[50%] after:p-2 after:bg-white after:rotate-[45deg] after:-top-2 hamed"
       >
         <Link
-          className="text-[#000000] font-semibold text-lg p-1 hover:bg-slate-200"
+          className="text-[#000000] font-semibold text-lg p-1 transition-all duration-300 hover:bg-slate-200"
           to="/register"
           onClick={() => {
             toggleProfile(false);
@@ -41,7 +41,7 @@ export default function UserProfileMenu({
 
         <Link
           to={"/FAQ"}
-          className="text-[#000000] font-semibold text-lg p-1 hover:bg-slate-200"
+          className="text-[#000000] font-semibold text-lg p-1 transition-all duration-300 hover:bg-slate-200"
           onClick={() => {
             toggleProfile(false);
           }}
@@ -51,7 +51,7 @@ export default function UserProfileMenu({
 
         <Link
           to={"/aboutus"}
-          className="text-[#000000] font-semibold text-lg p-1 hover:bg-slate-200"
+          className="text-[#000000] font-semibold text-lg p-1 transition-all duration-300 hover:bg-slate-200"
           onClick={() => {
             toggleProfile(false);
           }}
