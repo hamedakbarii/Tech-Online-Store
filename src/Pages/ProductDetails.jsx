@@ -20,11 +20,11 @@ function ProductDetails() {
     if (result) {
       setTimeout(() => {
         setValidCategory(true);
-      }, 3000);
+      }, 2000);
     } else {
       setTimeout(() => {
         setValidCategory(false);
-      }, 3000);
+      }, 2000);
     }
   }, []);
 

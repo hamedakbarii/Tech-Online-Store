@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowDown,
   Comparison,
@@ -12,6 +12,7 @@ import {
 } from "./../Icon";
 import WomanBehindLaptop from "../../WomanBehindLaptop.png";
 import OurServices from "../OurServices";
+import { Link, useLocation } from "react-router-dom";
 
 let AboutProduct = () => {
   return (
@@ -21,6 +22,7 @@ let AboutProduct = () => {
         512GB SSD, 2TB HDD, Windows 10 Home, Gaming Keyboard and Mouse 3 Years
         Warranty Gaming Desktop
       </p>
+
       <div className="flex items-center gap-4 px-4 mt-4">
         <div className="p-[.05rem] border-2 border-secondaryBlue rounded-full flex items-center justify-center">
           <div className="w-10 h-10 bg-[#4B4D4F] rounded-full"></div>
@@ -32,13 +34,16 @@ let AboutProduct = () => {
           <div className="w-10 h-10 bg-[#F2E9DC] rounded-full"></div>
         </div>
       </div>
+
       <div className="px-4 mt-2 flex items-center justify-between">
         <p className="text-lg font-semibold flex flex-col justify-center items-center tablet:flex-row">
           Have a Question?
-          <span className="font-[500] text-secondaryBlue underline tablet:ml-2">
-            {" "}
-            Contanct Us{" "}
-          </span>
+          <Link
+            to={"/contactus"}
+            className="font-[500] text-secondaryBlue underline tablet:ml-2"
+          >
+            Contanct Us
+          </Link>
         </p>
         <span>SKU D5515AI</span>
       </div>
@@ -127,8 +132,23 @@ const ProductPage = ({ data }) => {
     setProductSec(item);
   };
 
+  const location = useLocation();
+  const thisRoute = location.pathname;
+  const brandWithProductNumber = thisRoute.replace("/allproducts/", "");
+  const routeParts = brandWithProductNumber.split("/");
+
   return (
     <div className="flex flex-col container mx-auto mt-4">
+      <div className="flex justify-start items-center gap-2 my-2">
+        <Link to={"/"}>Home</Link>
+        <span className="text-[#0156FF]">›</span>
+        <Link to={"/allproducts"}>All Products</Link>
+        <span className="text-[#0156FF]">›</span>
+        <span>{routeParts[0]}</span>
+        <span className="text-[#0156FF]">›</span>
+        <span>{routeParts[1]}</span>
+      </div>
+
       <div className=" relative flex flex-col items-center justify-center">
         <img src={`/${data[0].img}`} className="object-cover object-center " />
 
