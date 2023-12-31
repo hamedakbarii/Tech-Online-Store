@@ -33,8 +33,8 @@ let SwiperProduct = ({ ItemList, spaceBetween, slidesPerView }) => {
       className="w-full"
     >
       {ItemList &&
-        ItemList.map((item) => (
-          <SwiperSlide className="flex flex-col">
+        ItemList.map((item, index) => (
+          <SwiperSlide className="flex flex-col" key={index}>
             <div className="flex flex-col rounded-lg bg-gray-100 transition-colors hover:bg-gray-200 p-2 duration-300">
               <Link
                 key={item.id}

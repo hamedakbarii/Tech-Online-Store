@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Filter from "./Filter";
 
 const FilterItems = ({
@@ -10,28 +10,36 @@ const FilterItems = ({
   FiltersShow,
 }) => {
   const [showFilter, setShowFilter] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const viewportWidth = window.innerWidth;
+      if (viewportWidth >= 768) {
+        setShowFilter(true);
+      } else {
+        setShowFilter(false);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="p-2 flex flex-col gap-4">
-      <div>
+    <div className="p-2 flex flex-col gap-4 md:bg-PrimaryBlue md:w-2/4">
+      <div className="md:hidden">
         <h3>MSI PS Series (20)</h3>
       </div>
 
       <div className="flex justify-between items-center gap-2">
         <button
-          className="w-48 h-16 text-center border border-[#CACDD8]"
+          className="w-48 h-16 text-center border border-[#CACDD8] md:hidden"
           onClick={() => setShowFilter(!showFilter)}
         >
           Filter
         </button>
-
-        {/* <select className="w-48 h-16 text-center border border-[#CACDD8]">
-          Sort By:
-          <option value="">Position</option>
-          <option value="">Category</option>
-          <option value="">Price</option>
-          <option value="">Color</option>
-          <option value="">Name</option>
-        </select> */}
       </div>
 
       {showFilter ? (

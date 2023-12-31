@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowDown, ArrowUp } from "../Icon";
+import { ArrowDown } from "../Icon";
 
 const Accardion = ({ Data }) => {
   const [Accardion, setAccardion] = useState(Data);
@@ -21,7 +21,7 @@ const Accardion = ({ Data }) => {
     <>
       {Accardion &&
         Accardion.map((item, index) => (
-          <>
+          <div key={index}>
             <div
               key={index}
               className="flex justify-between items-center p-2"
@@ -72,7 +72,7 @@ const Accardion = ({ Data }) => {
                 ))}
               </div>
             )}
-          </>
+          </div>
         ))}
     </>
   );

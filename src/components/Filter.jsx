@@ -50,16 +50,20 @@ const Filter = ({
     <div>
       <div className="flex justify-between items-center border-b">
         <h3 className="text-xl font-semibold  p-2">Filter By</h3>
-        <span onClick={() => setShowFilter(false)}>
+
+        <span onClick={() => setShowFilter(false)} className="md:hidden">
           <CloseIcon />
         </span>
       </div>
 
       {FiltersShow ? (
         <>
-          <div className="flex flex-col" key="FilterlistActive">
-            {filterOptions.map((item) => (
-              <div className="flex justify-between items-center p-2 font-semibold">
+          <div className="flex flex-col">
+            {filterOptions.map((item, index) => (
+              <div
+                className="flex justify-between items-center p-2 font-semibold"
+                key={index}
+              >
                 <details className="w-full">
                   <summary className="w-full list-none flex items-center justify-between">
                     {item.title}
@@ -277,22 +281,23 @@ const Filter = ({
         </>
       )}
 
-      <div className="flex items-center">
+      <div className="flex md:flex-col md:gap-2 items-center">
         <button
           onClick={() => {
             if (FilterCount > 0) {
               setFilterShow(true);
             }
           }}
-          className="text-white border-2 border-[#0156FF] bg-[#0156FF] px-10 py-2 font-semibold flex m-auto rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF]"
+          className="text-white border-2 border-[#0156FF] bg-[#0156FF] px-10 py-2 font-semibold flex m-auto rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF] md:text-sm"
         >
-          Apply Filters {FilterCount > 0 ? FilterCount : null}
+          Apply Filters {FilterCount > 0 ? `(${FilterCount})` : null}
         </button>
+
         <button
           onClick={() => {
             setFilterShow(false);
           }}
-          className="text-red-900 border-2 border-red-600 bg-red-300 px-10 py-2 font-semibold flex m-auto rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-red-700"
+          className="text-red-900 border-2 border-red-600 bg-red-300 px-10 py-2 font-semibold flex m-auto rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-red-700 md:text-sm"
         >
           Reset Filter
         </button>

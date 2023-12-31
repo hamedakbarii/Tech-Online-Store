@@ -28,20 +28,22 @@ const ProductsPage = () => {
         <Link to={"/allproducts"}>{thisRoute}</Link>
       </div>
 
-      <FilterItems
-        filter={filter}
-        setFilter={setFilter}
-        setFilterShow={setFilterShow}
-        FiltersShow={FiltersShow}
-        ActionFilterHandler={ActionFilterHandler}
-        setActionFilterHandler={setActionFilterHandler}
-      />
+      <div className="flex flex-col md:flex-row">
+        <FilterItems
+          filter={filter}
+          setFilter={setFilter}
+          setFilterShow={setFilterShow}
+          FiltersShow={FiltersShow}
+          ActionFilterHandler={ActionFilterHandler}
+          setActionFilterHandler={setActionFilterHandler}
+        />
 
-      <PaginationProducts
-        filter={filter}
-        FiltersShow={FiltersShow}
-        ActionFilterHandler={ActionFilterHandler}
-      />
+        <PaginationProducts
+          filter={filter}
+          FiltersShow={FiltersShow}
+          ActionFilterHandler={ActionFilterHandler}
+        />
+      </div>
     </>
   );
 };

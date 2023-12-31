@@ -30,9 +30,12 @@ let Products = () => {
     <>
       <div className="relative container flex flex-col mx-auto px-2 tablet:px-0">
         <div className="flex justify-between items-center p-4">
-          <h2 className="text-xl font-semibold">New Products</h2>
-          <Link to="/allproducts">
-            <h4 className="underline text-[#0156FF]">See All Products</h4>
+          <span className="text-xl font-semibold">New Products</span>
+          <Link
+            to="/allproducts"
+            className="border-b-2 border-b-[#0156FF] text-[#0156FF] transition-all duration-300 hover:pb-2"
+          >
+            See All Products
           </Link>
         </div>
 
