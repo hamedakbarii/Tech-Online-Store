@@ -48,11 +48,12 @@ const PaginationProducts = ({ FiltersShow, ActionFilterHandler }) => {
         )} of ${FiltersShow ? FilterProduct().length : products.length}`}
       </h4>
 
-      <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 p-2">
+      <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 p-2 md:p-0">
         {currentItems.map((product) => (
           <Link
             key={product.id}
             to={`/allproducts/${product.categoryTitle}/${product.id}`}
+            className="transition-all duration-300 hover:bg-gray-200"
           >
             <ProductCard {...product} />
           </Link>

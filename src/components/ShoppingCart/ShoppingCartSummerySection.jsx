@@ -256,7 +256,7 @@ const CountryList = [
 
 const ShoppingCartSummerySection = () => {
   return (
-    <section className="mb-4 flex flex-col justify-around items-start gap-2 bg-[#F0F3FF] py-4 px-3 rounded-lg">
+    <section className="mb-4 flex flex-col justify-around items-start gap-2 bg-[#F0F3FF] py-4 px-3 rounded-lg md:rounded-none">
       <div className="flex flex-col w-full">
         <h4 className="font-bold text-lg">Summary</h4>
 
@@ -384,7 +384,7 @@ const ShoppingCartSummerySection = () => {
 
             <Link
               to={"/checkout"}
-              className="w-full px-4 py-2 border-2 border-secondaryBlue transition-all duration-[.3s] text-secondaryBlue bg-transparent hover:bg-secondaryBlue hover:text-white font-semibold rounded-full mt-3"
+              className="w-full px-4 py-2 border-2 border-secondaryBlue transition-all duration-[.3s] text-secondaryBlue bg-transparent hover:bg-secondaryBlue hover:text-white font-semibold rounded-full mt-3 md:text-center"
             >
               Check Out with Multiple Addresses
             </Link>
@@ -458,7 +458,7 @@ const ShoppingCartSummerySection = () => {
         >
           <span>
             own it now, up to 6 months interest free
-            <span className="underline">learn more</span>
+            <span className="underline md:pl-2">learn more</span>
           </span>
         </a>
       </div>

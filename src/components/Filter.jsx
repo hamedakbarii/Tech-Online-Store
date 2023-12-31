@@ -49,7 +49,10 @@ const Filter = ({
   return (
     <div>
       <div className="flex justify-between items-center border-b">
-        <h3 className="text-xl font-semibold  p-2">Filter By</h3>
+        <h3 className="text-xl font-semibold p-2 md:hidden">Filter By</h3>
+        <h3 className="text-2xl font-semibold hidden text-center md:block w-full pb-2">
+          Filters
+        </h3>
 
         <span onClick={() => setShowFilter(false)} className="md:hidden">
           <CloseIcon />
