@@ -10,7 +10,7 @@ let ProductLogoArray = [
 
 let ProductLogo = () => {
   return (
-    <div className="grid grid-cols-2 px-2 gap-3 container mx-auto place-items-center mt-8">
+    <div className="grid grid-cols-2 md:grid-cols-4 px-2 md:px-0 gap-3 container mx-auto place-items-center my-8">
       {ProductLogoArray.map((itemLogo) => (
         <div className="p-1 transation-all duration-[.2s] hover:bg-[#F5F7FF] rounded-lg hover:-translate-y-[.5rem] blur-[.7px] hover:blur-[0px]">
           <img src={itemLogo} className="object-center object-cover" />
