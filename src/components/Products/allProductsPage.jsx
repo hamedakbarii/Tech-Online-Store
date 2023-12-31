@@ -13,6 +13,7 @@ const ProductsPage = () => {
     brands: [],
     filterprice: [0, 0],
   });
+
   const [FiltersShow, setFilterShow] = useState(false);
   const [ActionFilterHandler, setActionFilterHandler] = useState();
 
