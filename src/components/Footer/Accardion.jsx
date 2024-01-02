@@ -3,6 +3,7 @@ import { ArrowDown } from "../Icon";
 
 const Accardion = ({ Data }) => {
   const [Accardion, setAccardion] = useState(Data);
+
   let FooterAccardionHandler = (id, e) => {
     let Temp = [...Data];
     if (Accardion[id].isAccardionOpen) {
@@ -44,6 +45,7 @@ const Accardion = ({ Data }) => {
                 </>
               )}
             </div>
+
             {item.isAccardionOpen ? (
               <div
                 style={{
@@ -55,7 +57,9 @@ const Accardion = ({ Data }) => {
               >
                 {item.accardionContent.map((accardion, index) => (
                   <a key={index}>
-                    <span>{accardion}</span>
+                    <span className="transition-all duration-300 hover:opacity-70 ">
+                      {accardion}
+                    </span>
                   </a>
                 ))}
               </div>

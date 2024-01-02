@@ -138,7 +138,7 @@ const ProductPage = ({ data }) => {
   const routeParts = brandWithProductNumber.split("/");
 
   return (
-    <div className="flex flex-col container mx-auto mt-4">
+    <div className="flex flex-col container md:max-w-[95%] mx-auto mt-4">
       <div className="flex justify-start items-center gap-2 my-2">
         <Link to={"/"}>Home</Link>
         <span className="text-[#0156FF]">›</span>

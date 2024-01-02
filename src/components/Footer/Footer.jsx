@@ -23,6 +23,7 @@ let Accardion = [
     accardionContentHeight: `0`,
   },
 ];
+
 let LaptopAccardion = [
   {
     title: "Laptops",
@@ -72,6 +73,7 @@ export default function Footer() {
             <p className="font-semibold text-white text-2xl">
               Sign Up To Our Newsletter.
             </p>
+
             <p className="font-light text-white mt-4">
               Be the first to hear about the latest offers.
             </p>
@@ -84,6 +86,7 @@ export default function Footer() {
             placeholder="Your Email"
             className="pl-2 bg-transparent border-solid border-2 text-PrimaryGray placeholder:text-PrimaryGray rounded py-2 w-3/5"
           />
+
           <button className="text-white bg-[#0156FF] py-2 w-2/5 text-lg font-semibold rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF]">
             Subscribe
           </button>
@@ -97,6 +100,7 @@ export default function Footer() {
           <div className="flex flex-col border-b-[#A2A6B0] border-b-[1px] cursor-pointer w-full">
             <AccardionSection Data={Accardion} key="accardion" />
           </div>
+
           <div className="flex flex-col border-b-[#A2A6B0] border-b-[1px] cursor-pointer w-full">
             <AccardionSection Data={DesktopPCs} key="accardion desktop pcs" />
           </div>

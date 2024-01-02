@@ -33,8 +33,12 @@ export default function Header() {
     <>
       <NavbarTop />
 
-      <nav className="w-full block mx-auto px-4 py-2 xl:bg-white bg-[#0156FF] sticky top-0 z-20">
-        <div className="flex items-center justify-between container mx-auto px-2 gap-4 w-full">
+      {/* <div className="absolute bg-red-700 p-2 top-10">
+        <img src="/assets/Navbar/logo.svg" alt="" />
+      </div> */}
+
+      <nav className="w-full block mx-auto px-4 py-2 md:py-6 bg-[#0156FF] sticky top-0 z-20">
+        <div className="flex items-center justify-between container md:max-w-full mx-auto px-2 gap-4 w-full">
           <div className="flex items-center gap-2">
             <HamburgerMenue HandleHamburgerActivation={setActiveHamburger} />
 
@@ -129,6 +133,7 @@ export default function Header() {
               HandleUserDataShow={setActiveUserProfileMenu}
               UserDataShow={ActiveUserProfileMenu}
             />
+
             {ActiveUserProfileMenu ? (
               <UserProfileMenu
                 toggleProfile={setActiveUserProfileMenu}
@@ -138,7 +143,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="xl:flex items-center justify-between hidden">
+        {/* <div className="xl:flex items-center justify-between hidden">
           <Logo />
 
           <ul className="flex justify-center items-center px-2">
@@ -166,7 +171,7 @@ export default function Header() {
               className="rounded-full w-10 cursor-pointer"
             />
           </div>
-        </div>
+        </div> */}
       </nav>
     </>
   );

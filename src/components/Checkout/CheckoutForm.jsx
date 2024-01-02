@@ -3,7 +3,7 @@ import React from "react";
 const CheckoutForm = () => {
   return (
     <>
-      <form className="flex flex-col justify-center gap-2 p-3">
+      <form className="flex flex-col justify-center gap-2 p-3 md:w-5/6 ">
         <div className="flex flex-col border-b border-gray-300">
           <label className="font-semibold" htmlFor="Email">
             Email Address
@@ -17,6 +17,7 @@ const CheckoutForm = () => {
             You can create an account after checkout.
           </span>
         </div>
+
         <div className="flex flex-col">
           <label className="font-semibold" htmlFor="firstName">
             First Name
@@ -27,6 +28,7 @@ const CheckoutForm = () => {
             name="firstName"
           />
         </div>
+
         <div className="flex flex-col">
           <label className="font-semibold" htmlFor="LastName">
             Last Name
@@ -37,6 +39,7 @@ const CheckoutForm = () => {
             name="LastName"
           />
         </div>
+
         <div className="flex flex-col">
           <label className="font-semibold" htmlFor="Company">
             Company
@@ -47,6 +50,7 @@ const CheckoutForm = () => {
             name="Company"
           />
         </div>
+
         <div className="flex flex-col">
           <label className="font-semibold" htmlFor="StreetAddress">
             Street Address
@@ -62,6 +66,7 @@ const CheckoutForm = () => {
             name="StreetAddress2"
           />
         </div>
+
         <div className="flex flex-col">
           <label className="font-semibold" htmlFor="City">
             City
@@ -72,6 +77,7 @@ const CheckoutForm = () => {
             name="City"
           />
         </div>
+
         <div className="flex flex-col">
           <label className="font-semibold" htmlFor="State">
             State/Province
@@ -86,6 +92,7 @@ const CheckoutForm = () => {
             </option>
           </select>
         </div>
+
         <div className="flex flex-col">
           <label className="font-semibold" htmlFor="Postal Code">
             Zip/Postal Code
@@ -96,6 +103,7 @@ const CheckoutForm = () => {
             name="Postal Code"
           />
         </div>
+
         <div className="flex flex-col">
           <label className="font-semibold" htmlFor="Country">
             Country
@@ -104,6 +112,7 @@ const CheckoutForm = () => {
             <option value="United States">United States</option>
           </select>
         </div>
+
         <div className="flex flex-col border-b border-gray-300 py-5">
           <label className="font-semibold" htmlFor="Phone Number">
             Phone Number
@@ -114,27 +123,32 @@ const CheckoutForm = () => {
             name="Phone Number"
           />
         </div>
+
         <div>
           <h3>Standard rate</h3>
         </div>
+
         <div className="w-full flex justify-around items-baseline gap-4">
           <input type="radio" forHtml="standard" name="standard" />
-          <span>
+          <span className="md:w-5/6">
             Price may vary depending on the item/destination. Shop Staff will
             contact you. $21.00
           </span>
           <span className="font-semibold">$21.00</span>
         </div>
-        <div>
-          <h3>Pickup from store</h3>
-        </div>
+
+        <div>Pickup from store</div>
+
         <div className="w-full flex justify-around items-baseline gap-4">
           <input type="radio" forHtml="standard" name="standard" />
-          <span>1234 Street Adress, City Address, 1234 $0.00</span>
+          <span className="md:w-5/6">
+            1234 Street Adress, City Address, 1234 $0.00
+          </span>
           <span className="font-semibold">$0.00</span>
         </div>
+
         <div>
-          <button className="px-10 py-3 bg-[#007aff] text-white rounded-lg ">
+          <button className="px-10 py-3 bg-[#0156FF] text-white rounded-3xl">
             Next
           </button>
         </div>

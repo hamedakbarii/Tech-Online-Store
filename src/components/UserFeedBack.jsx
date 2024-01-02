@@ -11,31 +11,31 @@ let UserFeedBackData = [
     message: `My first order arrived today in perfect condition.  
         From the time I sent a question about the item to making the purchase, to the shipping and now the delivery, your company, Tecs, has stayed in touch.  Such great service.
         I look forward to shopping on your site in the future and would highly recommend it.`,
-    user: "hamed akbari",
+    user: "Hamed Akbari",
   },
   {
     message: `My first order arrived today in perfect condition.  
         From the time I sent a question about the item to making the purchase, to the shipping and now the delivery, your company, Tecs, has stayed in touch.  Such great service.
         I look forward to shopping on your site in the future and would highly recommend it.`,
-    user: "majid amini",
+    user: "Majid Amini",
   },
   {
     message: `My first order arrived today in perfect condition.  
         From the time I sent a question about the item to making the purchase, to the shipping and now the delivery, your company, Tecs, has stayed in touch.  Such great service.
         I look forward to shopping on your site in the future and would highly recommend it.`,
-    user: "hadis jahangiri",
+    user: "Amir Akbarzadeh",
   },
   {
     message: `My first order arrived today in perfect condition.  
         From the time I sent a question about the item to making the purchase, to the shipping and now the delivery, your company, Tecs, has stayed in touch.  Such great service.
         I look forward to shopping on your site in the future and would highly recommend it.`,
-    user: "amir akbrazadeh",
+    user: "Hadis Jahangiri",
   },
 ];
 
 let UserFeedBack = () => {
   return (
-    <div className="container mx-auto px-4 mt-4">
+    <div className="container md:max-w-[95%] mx-auto px-4 md:px-0 my-4">
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         spaceBetween={50}

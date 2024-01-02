@@ -29,7 +29,7 @@ let Hero = () => {
   }, [nextBg]);
 
   return (
-    <div className="container mx-auto mt-4 h-40">
+    <div className="container md:max-w-[95%] mx-auto mt-4 h-40">
       <div
         className="relative overflow-hidden h-full w-full"
         style={{ background: `url(assets/hero/hero-banner${bg}.png)` }}

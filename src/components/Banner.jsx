@@ -3,7 +3,7 @@ import { ZipIcon } from "./Icon";
 
 const Banner = () => {
   return (
-    <section className="bg-PrimaryBlue p-2 py-4 flex flex-col md:flex-row justify-center items-center gap-3 my-6 container mx-auto">
+    <section className="bg-PrimaryBlue p-2 py-4 flex flex-col md:flex-row justify-center items-center gap-3 my-6 container md:max-w-[95%] mx-auto">
       <div className="iconSvg relative">
         <ZipIcon />
       </div>

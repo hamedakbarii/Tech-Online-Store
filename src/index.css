@@ -88,38 +88,51 @@ details[open] summary {
 .userAccountDetails[open] {
   height: 23rem;
 }
-.animating{
-  animation: animating .3s ease forwards;
+.animating {
+  animation: animating 0.3s ease forwards;
 }
-.openAccardion{
-  animation: openAccardion .3s ease-in-out forwards;
+.openAccardion {
+  animation: openAccardion 0.3s ease-in-out forwards;
 }
-.closeAccardion{
-  animation: closeAccardion .3s ease-in-out forwards;
+.closeAccardion {
+  animation: closeAccardion 0.3s ease-in-out forwards;
 }
 @keyframes animating {
-  0%{
+  0% {
     opacity: 0;
     top: 100%;
-  }  
-  100%{
+  }
+  100% {
     opacity: 1;
     top: 2.4rem;
   }
 }
 @keyframes closeAccardion {
-  0%{
+  0% {
     transform: rotate(-180deg);
   }
-  100%{
+  100% {
     transform: rotate(0deg);
   }
 }
 @keyframes openAccardion {
-  0%{
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(-180deg);
   }
+}
+
+/* product sections banner hovering */
+
+.zoom-out-container {
+  overflow: hidden;
+}
+
+.zoom-out-container:hover .zoom-out-image {
+  transform: scale(
+    1.2
+  ); /* Adjust the scale factor for your desired zoom level */
+  transition: transform 0.7s ease; /* Add a smooth transition effect */
 }

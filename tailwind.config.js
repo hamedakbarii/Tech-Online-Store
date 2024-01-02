@@ -6,8 +6,6 @@ module.exports = {
       screens: {
         phone: "400px",
         tablet: "500px",
-        lgHeader: "1024px",
-        xlHeader: "1280px",
       },
       colors: {
         secondaryBlue: "#0156FF",

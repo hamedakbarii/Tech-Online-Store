@@ -1,4 +1,4 @@
-import { ArrowDown, Instagram, Facebook } from "../Icon";
+import { ArrowDown, Instagram } from "../Icon";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -18,6 +18,7 @@ const NavbarTop = () => {
             <p className="text-PrimaryGray font-semibold">
               Mon-Thu : <span className="text-white"> 9:00 AM - 5:30 PM</span>
             </p>
+
             {ShowContactDetail ? (
               <>
                 <span
@@ -51,20 +52,10 @@ const NavbarTop = () => {
           <span
             className="text-sm text-white font-bold cursor-pointer 
           flex flex-col relative after:w-full after:block after:border-t-2 after:border-t-white 
-          after:content-[''] after:absolute after:-bottom-1 after:scale-x-0	 after:transition-all after:origin-left hover:after:scale-x-100"
+          after:content-[''] after:absolute after:-bottom-1 hover:after:scale-x-0	 after:transition-all after:origin-left after:scale-x-100"
           >
             <Link to="/contactus">Contact Us</Link>
           </span>
-        </div>
-        <div className="xlHeader:flex hidden justify-center items-center gap-3">
-          <h4 className="font-semibold">Call Us: +98 9377550980</h4>
-
-          <a href="https://www.instagram.com/hamedakbrii/?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D">
-            <Instagram />
-          </a>
-          <a href="https://www.instagram.com/hamedakbrii/?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D">
-            <Instagram />
-          </a>
         </div>
       </div>
     </section>
