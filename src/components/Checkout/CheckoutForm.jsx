@@ -148,7 +148,10 @@ const CheckoutForm = () => {
         </div>
 
         <div>
-          <button className="px-10 py-3 bg-[#0156FF] text-white rounded-3xl">
+          <button
+            className="px-10 py-3 bg-[#0156FF] text-white rounded-3xl"
+            onClick={(e) => e.preventDefault()}
+          >
             Next
           </button>
         </div>

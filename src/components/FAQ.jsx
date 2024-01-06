@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { ArrowDown } from "./Icon";
 import OurServices from "./OurServices";
 
 let FAQData = [
@@ -89,59 +88,56 @@ const FAQ = () => {
   const thisRoute = location.pathname.replace("/", "");
 
   return (
-    <div className="container mx-auto px-2">
-      <div className="flex items-center justify-start gap-2 p-2">
-        <Link to={"/"}>Home</Link>
+    <div>
+      <div className="container md:max-w-[95%] mx-auto px-2 md:px-0 md:pb-20">
+        <div className="flex items-center justify-start gap-2 p-2">
+          <Link to={"/"}>Home</Link>
 
-        <span className="text-secondaryBlue text-lg">›</span>
+          <span className="text-secondaryBlue text-lg">›</span>
 
-        <span>{thisRoute}</span>
-      </div>
+          <span>{thisRoute}</span>
+        </div>
 
-      <h1 className="text-2xl font-bold my-4">Tecs Terms & Conditions</h1>
+        <h1 className="text-2xl font-bold my-4">Tecs Terms & Conditions</h1>
 
-      <div className="flex items-center justify-between p-2 px-4 bg-[#F5F7FF] border-b border-b-gray-300">
-        <p className="font-semibold">Definitions & Interpretation</p>
-        <ArrowDown size="10" color="black" />
-      </div>
+        <h2 className="text-lg font-bold mt-4">
+          GENERAL TERMS AND CONDITIONS FOR SALE OF PRODUCTS AND SERVICES
+        </h2>
 
-      <h2 className="text-lg font-bold mt-4">
-        GENERAL TERMS AND CONDITIONS FOR SALE OF PRODUCTS AND SERVICES
-      </h2>
+        <div className="flex flex-col gap-6">
+          {FAQData.map((item) => (
+            <div
+              className="flex flex-col gap-6"
+              onMouseOver={(e) => {
+                e.currentTarget.children[0].classList.add(`before:w-8`);
+                e.currentTarget.children[0].classList.add(`before:mr-2`);
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.children[0].classList.remove(`before:w-8`);
+                e.currentTarget.children[0].classList.remove(`before:mr-2`);
+              }}
+            >
+              <p className="font-semibold flex items-center before:content-[''] before:block before:border-t-2 before:border-black before:mr-0 before:w-0 before:transition-all before:duration-[.3s]">
+                {item.title}
+              </p>
 
-      <div className="flex flex-col gap-6">
-        {FAQData.map((item) => (
-          <div
-            className="flex flex-col gap-6"
-            onMouseOver={(e) => {
-              e.currentTarget.children[0].classList.add(`before:w-8`);
-              e.currentTarget.children[0].classList.add(`before:mr-2`);
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.children[0].classList.remove(`before:w-8`);
-              e.currentTarget.children[0].classList.remove(`before:mr-2`);
-            }}
-          >
-            <p className="font-semibold flex items-center before:content-[''] before:block before:border-t-2 before:border-black before:mr-0 before:w-0 before:transition-all before:duration-[.3s]">
-              {item.title}
-            </p>
+              <p className="font-[300]">
+                {item.content.map((itemContent) => (
+                  <>{itemContent}</>
+                ))}
+              </p>
 
-            <p className="font-[300]">
-              {item.content.map((itemContent) => (
-                <>{itemContent}</>
-              ))}
-            </p>
-
-            {item.contentCasseding ? (
-              <div className="flex flex-col gap-2">
-                {item.contentCasseding &&
-                  item.contentCasseding.map((itemcasseding) => (
-                    <p className="font-[300]">{itemcasseding}</p>
-                  ))}
-              </div>
-            ) : null}
-          </div>
-        ))}
+              {item.contentCasseding ? (
+                <div className="flex flex-col gap-2">
+                  {item.contentCasseding &&
+                    item.contentCasseding.map((itemcasseding) => (
+                      <p className="font-[300]">{itemcasseding}</p>
+                    ))}
+                </div>
+              ) : null}
+            </div>
+          ))}
+        </div>
       </div>
       <OurServices />
     </div>

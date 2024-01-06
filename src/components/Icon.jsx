@@ -1,9 +1,9 @@
-let Icon = ({ color , size }) => {
+let Icon = ({ color, size }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size ? size :"41"}
-      height={size ? size :"41"}
+      width={size ? size : "41"}
+      height={size ? size : "41"}
       fill="none"
       viewBox="0 0 34 41"
     >
@@ -14,6 +14,7 @@ let Icon = ({ color , size }) => {
     </svg>
   );
 };
+
 function LeftSideIcon({ color }) {
   return (
     <svg
@@ -32,6 +33,7 @@ function LeftSideIcon({ color }) {
     </svg>
   );
 }
+
 function RightSideIcon() {
   return (
     <svg
@@ -50,6 +52,7 @@ function RightSideIcon() {
     </svg>
   );
 }
+
 function Aviable() {
   return (
     <svg
@@ -68,6 +71,7 @@ function Aviable() {
     </svg>
   );
 }
+
 function OutOfStock() {
   return (
     <svg
@@ -85,6 +89,7 @@ function OutOfStock() {
     </svg>
   );
 }
+
 function PickedStar() {
   return (
     <svg
@@ -101,6 +106,7 @@ function PickedStar() {
     </svg>
   );
 }
+
 function UnPickedStar() {
   return (
     <svg
@@ -117,6 +123,7 @@ function UnPickedStar() {
     </svg>
   );
 }
+
 function ArrowDown({ color, size }) {
   return (
     <svg
@@ -136,36 +143,18 @@ function ArrowDown({ color, size }) {
   );
 }
 
-function Facebook({color , size}) {
+function Instagram({ color, size }) {
   return (
     <svg
       className="cursor-pointer"
       xmlns="http://www.w3.org/2000/svg"
       width={size ? size : "16"}
-      height={size ? size :"16"}
+      height={size ? size : "16"}
       fill="none"
       viewBox="0 0 16 16"
     >
       <path
-        fill={color ? color : 'white'}
-        d="M15.105.277H.895a.617.617 0 00-.619.617v14.211c0 .342.276.618.618.618h14.211a.617.617 0 00.618-.618V.895a.617.617 0 00-.618-.618zm-1.784 4.508h-1.234c-.967 0-1.154.46-1.154 1.135v1.49h2.309l-.301 2.33h-2.008v5.983H8.525V9.742H6.51V7.409h2.014V5.691c0-1.995 1.218-3.082 2.998-3.082.854 0 1.586.064 1.8.093v2.083h-.002z"
-      ></path>
-    </svg>
-  );
-}
-
-function Instagram({color , size}) {
-  return (
-    <svg
-      className="cursor-pointer"
-      xmlns="http://www.w3.org/2000/svg"
-      width={size ? size : "16"}
-      height={size ? size :"16"}
-      fill="none"
-      viewBox="0 0 16 16"
-    >
-      <path
-        fill={color ? color : 'white'}
+        fill={color ? color : "white"}
         d="M8 5.396A2.609 2.609 0 005.396 8 2.609 2.609 0 008 10.604 2.609 2.609 0 0010.603 8 2.609 2.609 0 008 5.396zM15.808 8c0-1.078.01-2.147-.05-3.223-.061-1.25-.346-2.36-1.26-3.273-.916-.916-2.024-1.2-3.274-1.26-1.078-.06-2.146-.05-3.222-.05-1.079 0-2.147-.01-3.223.05-1.25.06-2.36.346-3.274 1.26C.59 2.42.306 3.527.245 4.777.186 5.855.196 6.924.196 8s-.01 2.146.05 3.223c.061 1.25.346 2.359 1.26 3.273.916.916 2.024 1.2 3.274 1.26 1.078.06 2.146.05 3.223.05 1.078 0 2.146.01 3.222-.05 1.25-.06 2.36-.346 3.274-1.26.916-.916 1.199-2.023 1.26-3.273.062-1.077.05-2.145.05-3.223zM8 12.006A4 4 0 013.994 8 4 4 0 018 3.994 4 4 0 0112.005 8 4 4 0 018 12.006zm4.17-7.24a.934.934 0 110-1.872.934.934 0 110 1.872z"
       ></path>
     </svg>
@@ -210,6 +199,7 @@ function Shop() {
     </svg>
   );
 }
+
 function ShopingCart() {
   return (
     <svg
@@ -226,6 +216,7 @@ function ShopingCart() {
     </svg>
   );
 }
+
 function UserIcon({ HandleUserDataShow, UserDataShow }) {
   return (
     <svg
@@ -237,6 +228,7 @@ function UserIcon({ HandleUserDataShow, UserDataShow }) {
       onClick={() => {
         UserDataShow ? HandleUserDataShow(false) : HandleUserDataShow(true);
       }}
+      className="cursor-pointer"
     >
       <circle cx="16" cy="16" r="15" stroke="#fff" strokeWidth="2"></circle>
       <path
@@ -246,6 +238,7 @@ function UserIcon({ HandleUserDataShow, UserDataShow }) {
     </svg>
   );
 }
+
 function Magnfier() {
   return (
     <svg
@@ -264,6 +257,7 @@ function Magnfier() {
     </svg>
   );
 }
+
 function PriceTag() {
   return (
     <svg
@@ -291,6 +285,7 @@ function PriceTag() {
     </svg>
   );
 }
+
 function DropUser() {
   return (
     <svg
@@ -358,6 +353,7 @@ function CloseIcon() {
     </svg>
   );
 }
+
 function ArrowDown2() {
   return (
     <svg
@@ -376,6 +372,7 @@ function ArrowDown2() {
     </svg>
   );
 }
+
 export function ArrowUp({ size }) {
   return (
     <svg
@@ -394,6 +391,7 @@ export function ArrowUp({ size }) {
     </svg>
   );
 }
+
 function HeartLike() {
   return (
     <svg
@@ -549,6 +547,7 @@ export function Watch() {
     </svg>
   );
 }
+
 export function Phone() {
   return (
     <svg
@@ -721,6 +720,7 @@ function GraphicRtxIcon() {
     </svg>
   );
 }
+
 export function DeleteIcon() {
   return (
     <svg
@@ -747,6 +747,7 @@ export function DeleteIcon() {
     </svg>
   );
 }
+
 export function EditIcon() {
   return (
     <svg
@@ -772,59 +773,56 @@ export function EditIcon() {
   );
 }
 
-const FillHeart = ({color,size}) => {
+const FillHeart = ({ color, size }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size?size:'12'}
-      height={size?size:'12'}
+      width={size ? size : "12"}
+      height={size ? size : "12"}
       fill="none"
       viewBox="0 0 11 10"
     >
       <path
-        fill={color?color:'white'}
+        fill={color ? color : "white"}
         d="M5.315 1.727C3.624-.795.2.58.2 3.327c0 2.062 4.694 5.29 5.115 5.71.425-.42 4.885-3.648 4.885-5.71 0-2.727-3.19-4.122-4.885-1.6z"
       ></path>
     </svg>
   );
-}
+};
 
-const FillStar = ({color,size}) => {
+const FillStar = ({ color, size }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size?size:'14'}
-      height={size?size:'14'}
+      width={size ? size : "14"}
+      height={size ? size : "14"}
       fill="none"
       viewBox="0 0 14 13"
     >
       <path
-        fill={color?color:"#fff"}
+        fill={color ? color : "#fff"}
         d="M6.701.418a.2.2 0 01.367 0L8.7 4.146a.2.2 0 00.163.119l4.05.401a.2.2 0 01.114.349L9.988 7.72a.2.2 0 00-.063.192l.87 3.976a.2.2 0 01-.297.216l-3.513-2.056a.2.2 0 00-.202 0l-3.512 2.056a.2.2 0 01-.297-.216l.87-3.976a.2.2 0 00-.062-.192L.74 5.015a.2.2 0 01.113-.349l4.05-.401a.2.2 0 00.164-.119L6.7.418z"
       ></path>
     </svg>
   );
-}
+};
 
-
-const Truck = ({color,size}) => {
+const Truck = ({ color, size }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size?size:"13"}
-      height={size?size:"10"}
+      width={size ? size : "13"}
+      height={size ? size : "10"}
       fill="none"
       viewBox="0 0 13 10"
     >
       <path
-        fill={color?color:"#fff"}
+        fill={color ? color : "#fff"}
         d="M1.136.8A1.136 1.136 0 000 1.936v6.25h1.136a1.705 1.705 0 003.41 0h3.409a1.705 1.705 0 103.409 0H12.5v-2.84l-1.704-2.273H9.09V.8H1.136zm7.955 3.125h1.42l1.12 1.42H9.09v-1.42zm-6.25 3.41a.852.852 0 110 1.704.852.852 0 010-1.705zm6.818 0a.852.852 0 110 1.703.852.852 0 010-1.704z"
       ></path>
     </svg>
   );
-}
-
-
+};
 
 export {
   Icon,
@@ -835,7 +833,6 @@ export {
   PickedStar,
   UnPickedStar,
   ArrowDown,
-  Facebook,
   Instagram,
   Search,
   Shop,
@@ -856,7 +853,7 @@ export {
   LongArrow,
   IntelIconSvg,
   GraphicRtxIcon,
-  FillHeart , 
-  FillStar , 
-  Truck , 
+  FillHeart,
+  FillStar,
+  Truck,
 };

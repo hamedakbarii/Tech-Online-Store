@@ -1,34 +1,9 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-export default function UserProfileMenu({
-  toggleProfile,
-  ActiveUserProfileMenu,
-}) {
-  const modalRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      console.log(e.target);
-
-      if (!e.target) {
-        toggleProfile(false);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
+export default function UserProfileMenu({ toggleProfile }) {
   return (
     <>
-      <div
-        ref={modalRef}
-        className="absolute top-full right-0 w-full md:w-60 bg-white shadow-lg p-2 flex flex-col after:block after:absolute after:content-[''] after:right-[10%] md:after:right-[50%] after:p-2 after:bg-white after:rotate-[45deg] after:-top-2 hamed"
-      >
+      <div className="absolute top-full right-0 w-full md:w-60 bg-white shadow-lg p-2 flex flex-col after:block after:absolute after:content-[''] after:right-[10%] md:after:right-[12%] after:p-2 after:bg-white after:rotate-[45deg] after:-top-2">
         <Link
           className="text-[#000000] font-semibold text-lg p-1 transition-all duration-300 hover:bg-slate-200"
           to="/register"

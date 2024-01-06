@@ -37,7 +37,7 @@ let GamingMonitor = () => {
       <SwiperProduct
         ItemList={gamingMonitorProducts}
         slidesPerView={slidesPerView}
-        spaceBetween={50}
+        spaceBetween={30}
       />
     </ProductsContainer>
   );

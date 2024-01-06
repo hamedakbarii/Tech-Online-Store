@@ -60,22 +60,6 @@ td {
   text-align: center;
 }
 
-/*  */
-
-/* details {
-  background: gainsboro;
-  padding: 10px;
-}
-
-details summary {
-  cursor: pointer;
-  transition: margin 150ms ease-out;
-}
-
-details[open] summary {
-  margin-bottom: 10px;
-} */
-
 .userAccountDetails {
   transition: height 1s ease;
   overflow: hidden;
@@ -125,14 +109,10 @@ details[open] summary {
 }
 
 /* product sections banner hovering */
-
 .zoom-out-container {
   overflow: hidden;
 }
-
 .zoom-out-container:hover .zoom-out-image {
-  transform: scale(
-    1.2
-  ); /* Adjust the scale factor for your desired zoom level */
-  transition: transform 0.7s ease; /* Add a smooth transition effect */
+  transform: scale(1.2);
+  transition: transform 0.7s ease;
 }

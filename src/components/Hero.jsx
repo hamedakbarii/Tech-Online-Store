@@ -5,7 +5,7 @@ let Hero = () => {
   const [bg, setBg] = useState(1);
 
   const nextBg = () => {
-    if (bg < 3) {
+    if (bg < 4) {
       setBg((prev) => prev + 1);
     } else {
       setBg(1);
@@ -16,7 +16,7 @@ let Hero = () => {
     if (bg > 1) {
       setBg((prev) => prev - 1);
     } else {
-      setBg(3);
+      setBg(4);
     }
   };
 
@@ -49,7 +49,7 @@ let Hero = () => {
           </div>
 
           <span className="absolute -top-1 right-0 text-black text-sm p-2">
-            {bg} / 3
+            {bg} / 4
           </span>
         </div>
       </div>

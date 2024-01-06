@@ -3,7 +3,6 @@ import {
   ArrowDown,
   Comparison,
   GraphicRtxIcon,
-  HeartLike,
   IntelIconSvg,
   LongArrow,
   NovelLetter,
@@ -13,6 +12,7 @@ import {
 import WomanBehindLaptop from "../../WomanBehindLaptop.png";
 import OurServices from "../OurServices";
 import { Link, useLocation } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
 
 let AboutProduct = () => {
   return (
@@ -137,6 +137,17 @@ const ProductPage = ({ data }) => {
   const brandWithProductNumber = thisRoute.replace("/allproducts/", "");
   const routeParts = brandWithProductNumber.split("/");
 
+  const likeFunction = (event) => {
+    const classList = event.currentTarget.classList;
+
+    classList.toggle("text-red-500");
+    classList.toggle("scale-125");
+
+    setTimeout(() => {
+      classList.remove("scale-125");
+    }, 300);
+  };
+
   return (
     <div className="flex flex-col container md:max-w-[95%] mx-auto mt-4">
       <div className="flex justify-start items-center gap-2 my-2">
@@ -153,7 +164,14 @@ const ProductPage = ({ data }) => {
         <img src={`/${data[0].img}`} className="object-cover object-center " />
 
         <div className="absolute top-2 left-4 flex flex-col items-center gap-2">
-          <HeartLike />
+          <div className="cursor-pointer border-2 w-9 h-9 rounded-full flex justify-center items-center">
+            <FaHeart
+              onClick={(e) => {
+                likeFunction(e);
+              }}
+              className={`text-3xl text-gray-400 p-1`}
+            />
+          </div>
           <Comparison />
           <NovelLetter />
         </div>
@@ -290,6 +308,7 @@ const ProductPage = ({ data }) => {
           </div>
         </div>
       </div>
+
       <div
         className="px-4 h-[18rem] bg-[length:100%_100%] bg-no-repeat bg-right-bottom"
         style={{ backgroundImage: `url(${WomanBehindLaptop})` }}

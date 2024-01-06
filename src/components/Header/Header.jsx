@@ -1,30 +1,29 @@
 import React, { useState } from "react";
-import Logo from "../Logo";
+// import Logo from "../Logo";
 import NavbarTop from "./NavbarTop";
 import {
   ArrowDown,
   CloseIcon,
   Magnfier,
-  Search,
-  Shop,
   UserIcon,
   ShopingCart,
   Icon,
 } from "../Icon";
+
 import HamburgerMenue from "./HamburgerMenu";
 import UserProfileMenu from "./UserProfileMenu";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  let navUl = [
-    "Laptops",
-    "Desktop PCs",
-    "Networking devices",
-    "Printers & Scanners",
-    "Pc parts",
-    "All Other Products",
-    "Repairs",
-  ];
+  // let navUl = [
+  //   "Laptops",
+  //   "Desktop PCs",
+  //   "Networking devices",
+  //   "Printers & Scanners",
+  //   "Pc parts",
+  //   "All Other Products",
+  //   "Repairs",
+  // ];
 
   const [ActiveHamburger, setActiveHamburger] = useState(false);
   const [ActiveUserProfileMenu, setActiveUserProfileMenu] = useState(false);
@@ -32,10 +31,6 @@ export default function Header() {
   return (
     <>
       <NavbarTop />
-
-      {/* <div className="absolute bg-red-700 p-2 top-10">
-        <img src="/assets/Navbar/logo.svg" alt="" />
-      </div> */}
 
       <nav className="w-full block mx-auto px-4 py-2 md:py-6 bg-[#0156FF] sticky top-0 z-20">
         <div className="flex items-center justify-between container md:max-w-full mx-auto px-2 gap-4 w-full">
@@ -142,36 +137,6 @@ export default function Header() {
             ) : null}
           </div>
         </div>
-
-        {/* <div className="xl:flex items-center justify-between hidden">
-          <Logo />
-
-          <ul className="flex justify-center items-center px-2">
-            {navUl.map((item) => (
-              <li key={item} data={item} />
-            ))}
-            <button className="py-1 transition-all px-5 rounded-2xl font-semibold text-[#0156FF] mx-2 hover:bg-[#0156FF] hover:text-white border-2 border-solid border-secondaryBlue">
-              Our Deals
-            </button>
-          </ul>
-
-          <div className="flex justify-center items-center gap-4">
-            <Search />
-
-            <div className="relative">
-              <Shop />
-              <span className="absolute font-semibold text-[.7rem] -top-2 -right-2 bg-[#0156FF] text-white rounded-full w-4 h-4 flex justify-center items-center">
-                2
-              </span>
-            </div>
-
-            <img
-              src="./assets/profile/hamed.jpg"
-              alt="hamed"
-              className="rounded-full w-10 cursor-pointer"
-            />
-          </div>
-        </div> */}
       </nav>
     </>
   );
