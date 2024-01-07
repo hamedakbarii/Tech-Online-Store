@@ -48,8 +48,8 @@ let UserFeedBack = () => {
         <span className="w-full h-full top-0 left-0 absolute bg-[#eff5ff] rounded-lg"></span>
 
         {UserFeedBackData &&
-          UserFeedBackData.map((item) => (
-            <SwiperSlide className="relative p-4 px-6 rounded-lg">
+          UserFeedBackData.map((item, index) => (
+            <SwiperSlide className="relative p-4 px-6 rounded-lg" key={index}>
               <div className="flex flex-col">
                 <p className='flex items-start text-md text-justify before:block before:content-["“"] before:leading-[.7] before:mr-4 before:text-6xl'>
                   {item.message}

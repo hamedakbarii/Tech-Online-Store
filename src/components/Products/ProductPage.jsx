@@ -1,18 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   ArrowDown,
-  Comparison,
-  GraphicRtxIcon,
   IntelIconSvg,
   LongArrow,
-  NovelLetter,
   PayPalIconSvg,
   ZipIcon,
 } from "./../Icon";
-import WomanBehindLaptop from "../../WomanBehindLaptop.png";
 import OurServices from "../OurServices";
 import { Link, useLocation } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
+import { IoStatsChart } from "react-icons/io5";
+import { GoMail } from "react-icons/go";
 
 let AboutProduct = () => {
   return (
@@ -137,20 +135,9 @@ const ProductPage = ({ data }) => {
   const brandWithProductNumber = thisRoute.replace("/allproducts/", "");
   const routeParts = brandWithProductNumber.split("/");
 
-  const likeFunction = (event) => {
-    const classList = event.currentTarget.classList;
-
-    classList.toggle("text-red-500");
-    classList.toggle("scale-125");
-
-    setTimeout(() => {
-      classList.remove("scale-125");
-    }, 300);
-  };
-
   return (
-    <div className="flex flex-col container md:max-w-[95%] mx-auto mt-4">
-      <div className="flex justify-start items-center gap-2 my-2">
+    <div className="flex flex-col w-full mx-auto mt-4">
+      <div className="flex justify-start items-center gap-2 p-4">
         <Link to={"/"}>Home</Link>
         <span className="text-[#0156FF]">›</span>
         <Link to={"/allproducts"}>All Products</Link>
@@ -164,16 +151,22 @@ const ProductPage = ({ data }) => {
         <img src={`/${data[0].img}`} className="object-cover object-center " />
 
         <div className="absolute top-2 left-4 flex flex-col items-center gap-2">
-          <div className="cursor-pointer border-2 w-9 h-9 rounded-full flex justify-center items-center">
-            <FaHeart
-              onClick={(e) => {
-                likeFunction(e);
-              }}
-              className={`text-3xl text-gray-400 p-1`}
-            />
+          <div className="cursor-pointer border-2 w-9 h-9 rounded-full flex justify-center items-center border-red-500 transition-all duration-300 hover:opacity-70">
+            <FaHeart className={`text-3xl p-1 text-red-500`} />
           </div>
-          <Comparison />
-          <NovelLetter />
+
+          <div className="cursor-pointer border-2 w-9 h-9 rounded-full flex justify-center items-center border-green-500 transition-all duration-300 hover:opacity-70">
+            <IoStatsChart className={`text-3xl text-green-500 p-1`} />
+          </div>
+
+          <div
+            className="cursor-pointer border-2 w-9 h-9 rounded-full flex justify-center items-center  border-orange-900 transition-all duration-300 hover:opacity-70"
+            onClick={() =>
+              (window.location.href = "mailto:hamedakbariwork@gmail.com")
+            }
+          >
+            <GoMail className={`text-3xl p-1 text-orange-900`} />
+          </div>
         </div>
 
         <div className="flex items-center gap-2 mt-4">
@@ -188,33 +181,35 @@ const ProductPage = ({ data }) => {
 
       <div className="flex flex-col mt-4">
         <div className="flex items-center">
-          {ProductInformationChanger.map((item, index) =>
-            item.active ? (
-              <div key={index} className="block cursor-pointer">
-                <span
-                  activate--data={item.active ? "active" : "deactive"}
-                  onClick={(e) => {
-                    ProductInformationFunctionHandler(index, item.title);
-                  }}
-                  className="pb-2 px-2 translate-y-0 text-black font-[550] flex flex-col after:border-b-2 after:border-b-black after:block after:content-[''] transation-all duration-[.5s]"
-                >
-                  {item.title}
-                </span>
-              </div>
-            ) : (
-              <div className="block cursor-pointer">
-                <span
-                  activate--data={item.active ? "active" : "deactive"}
-                  onClick={(e) => {
-                    ProductInformationFunctionHandler(index, item.title);
-                  }}
-                  className="pb-2 px-2 translate-y-2 text-gray-500 font-[550] flex flex-col after:border-b-2 after:border-b-transparent after:block after:content-[''] transation-all duration-[.5s]"
-                >
-                  {item.title}
-                </span>
-              </div>
-            )
-          )}
+          {ProductInformationChanger.map((item, index) => (
+            <div key={index}>
+              {item.active ? (
+                <div key={index} className="block cursor-pointer">
+                  <span
+                    activate--data={item.active ? "active" : "deactive"}
+                    onClick={(e) => {
+                      ProductInformationFunctionHandler(index, item.title);
+                    }}
+                    className="pb-2 px-2 translate-y-0 text-black font-[550] flex flex-col after:border-b-2 after:border-b-black after:block after:content-[''] transation-all duration-[.5s]"
+                  >
+                    {item.title}
+                  </span>
+                </div>
+              ) : (
+                <div key={index} className="block cursor-pointer">
+                  <span
+                    activate--data={item.active ? "active" : "deactive"}
+                    onClick={() => {
+                      ProductInformationFunctionHandler(index, item.title);
+                    }}
+                    className="pb-2 px-2 translate-y-2 text-gray-500 font-[550] flex flex-col after:border-b-2 after:border-b-transparent after:block after:content-[''] transation-all duration-[.5s]"
+                  >
+                    {item.title}
+                  </span>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
         <div className="block px-4 mt-2">
@@ -310,31 +305,38 @@ const ProductPage = ({ data }) => {
       </div>
 
       <div
-        className="px-4 h-[18rem] bg-[length:100%_100%] bg-no-repeat bg-right-bottom"
-        style={{ backgroundImage: `url(${WomanBehindLaptop})` }}
+        className="h-72 md:h-80 bg-[#F5F7FF] bg-cover md:bg-contain"
+        style={{
+          background: 'url("/assets/womanBehindLaptop.svg")',
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right",
+        }}
       >
-        <div className="flex flex-col gap-4 mt-10">
-          <div className="flex items-center justify-between w-[80%] max-w-[15rem] border border-gray-400 rounded p-2">
-            <span>Product Support</span>
+        <div className="flex flex-col justify-center items-start gap-4 h-full pl-5 md:pl-20">
+          <div className="flex items-center justify-between w-[80%] max-w-[15rem] border border-gray-300 rounded p-2 transition-all duration-300 hover:opacity-50">
+            <span className="font-semibold text-sm">Product Support</span>
             <LongArrow />
           </div>
 
-          <div className="flex items-center justify-between w-[80%] max-w-[15rem] border border-gray-400 rounded p-2">
-            <span>Product Support</span>
+          <Link
+            to={"/faq"}
+            className="flex items-center justify-between w-[80%] max-w-[15rem] border border-gray-300 rounded p-2 transition-all duration-300 hover:opacity-50"
+          >
+            <span className="font-semibold text-sm">FAQ</span>
             <LongArrow />
-          </div>
+          </Link>
 
-          <div className="flex items-center justify-between w-[80%] max-w-[15rem] border border-gray-400 rounded p-2">
-            <span>Product Support</span>
+          <div className="flex items-center justify-between w-[80%] max-w-[15rem] border border-gray-300 rounded p-2 transition-all duration-300 hover:opacity-50">
+            <span className="font-semibold text-sm">Our Buyer Guide</span>
             <LongArrow />
           </div>
         </div>
       </div>
 
-      <div className="px-4 flex flex-col items-center justify-center py-6 gap-8 lineargradiant text-white">
-        <div className="flex flex-col items-center justify-center gap-4">
-          <h2 className="text-2xl font-semibold">Features</h2>
-          <p className="text-center">
+      <div className="flex flex-col items-center justify-center gap-8 p-6 lineargradiant text-white md:grid md:grid-cols-2">
+        <div className="flex flex-col items-center justify-center gap-4 md:col-span-2 md:row-start-1 text-center">
+          <h2 className="text-3xl font-semibold">Features</h2>
+          <p className="md:w-1/3 md:text-center">
             The MPG series brings out the best in gamers by allowing full
             expression in color with advanced RGB lighting control and
             synchronization.
@@ -346,7 +348,7 @@ const ProductPage = ({ data }) => {
             <IntelIconSvg />
           </div>
 
-          <p className="text-center">
+          <p className="md:w-1/3 text-center">
             <span className="font-semibold">Intel® Core™ i7</span> processor
             with the upmost computing power to bring you an unparalleled gaming
             experience.
@@ -355,10 +357,10 @@ const ProductPage = ({ data }) => {
 
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="w-20 h-20 flex items-center justify-center bg-black rounded-full">
-            <GraphicRtxIcon />
+            <img src="/assets/Features/featuresIcon1.svg" alt="featuresIcon1" />
           </div>
 
-          <p className="text-center">
+          <p className="md:w-1/3 text-center">
             The new <span className="font-semibold">GeForce® RTX SUPER™</span>{" "}
             Series has more cores and higher clocks for superfast performance
             compared to previous-gen GPUs.
@@ -367,10 +369,10 @@ const ProductPage = ({ data }) => {
 
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="w-20 h-20 flex items-center justify-center bg-black rounded-full">
-            <IntelIconSvg />
+            <img src="/assets/Features/featuresIcon2.svg" alt="featuresIcon2" />
           </div>
 
-          <p className="text-center">
+          <p className="md:w-1/3 text-center">
             <span className="font-semibold">Intel® Core™ i7</span> processor
             with the upmost computing power to bring you an unparalleled gaming
             experience.
@@ -379,16 +381,17 @@ const ProductPage = ({ data }) => {
 
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="w-20 h-20 flex items-center justify-center bg-black rounded-full">
-            <GraphicRtxIcon />
+            <img src="/assets/Features/featuresIcon3.svg" alt="featuresIcon3" />
           </div>
 
-          <p className="text-center">
+          <p className="md:w-1/3 text-center">
             The new <span className="font-semibold">GeForce® RTX SUPER™</span>{" "}
             Series has more cores and higher clocks for superfast performance
             compared to previous-gen GPUs.
           </p>
         </div>
       </div>
+
       <OurServices />
     </div>
   );

@@ -3,6 +3,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaTelegram, FaGithub } from "react-icons/fa";
 import { PiCursorClickFill } from "react-icons/pi";
 import AccardionSection from "./Accardion";
+import { Link } from "react-router-dom";
 
 let Accardion = [
   {
@@ -137,9 +138,12 @@ export default function Footer() {
             </a>
           </div>
 
-          <span className="text-[#A2A6B0] text-sm">
+          <Link
+            to={"https://hamedakbari.vercel.app"}
+            className="text-[#A2A6B0] text-sm"
+          >
             Made with ❤️ ( Hamed Akbari )
-          </span>
+          </Link>
         </div>
       </footer>
     </>

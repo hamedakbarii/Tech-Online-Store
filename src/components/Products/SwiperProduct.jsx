@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 export let CalculateStars = ({ stars }) => {
   let starsArr = [];
   for (let i = 0; i < stars; i++) {
-    starsArr.push(<PickedStar />);
+    starsArr.push(<PickedStar key={`picked_${i}`} />);
   }
   for (let i = stars; i < 5; i++) {
-    starsArr.push(<UnPickedStar />);
+    starsArr.push(<UnPickedStar key={`unpicked_${i}`} />);
   }
   return <p className="flex items-center">{starsArr}</p>;
 };
