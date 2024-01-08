@@ -1,26 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import router from "./routes";
 import { useRoutes } from "react-router-dom";
-import { createContext } from "react";
-
-export const ProductToBuy = createContext(null);
+import { IoIosArrowUp } from "react-icons/io";
 
 export default function App() {
   let routes = useRoutes(router);
-  const [ProductOnFocus, setProductOnFocus] = useState(null);
-  const storing = [ProductOnFocus, setProductOnFocus];
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollButton(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <ProductToBuy.Provider value={storing}>
-      <>
-        <Header />
+    <div className="relative">
+      <Header />
 
-        {routes}
+      {routes}
 
-        <Footer />
-      </>
-    </ProductToBuy.Provider>
+      <Footer />
+
+      {showScrollButton && (
+        <div
+          className="fixed w-10 h-10 rounded-full right-7 bottom-7 bg-[#0156FF] z-10 flex justify-center items-center cursor-pointer transition-all duration-300 hover:opacity-70"
+          onClick={scrollToTop}
+        >
+          <IoIosArrowUp className="text-white text-2xl" />
+        </div>
+      )}
+    </div>
   );
 }

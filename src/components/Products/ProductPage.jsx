@@ -13,6 +13,10 @@ import { IoStatsChart } from "react-icons/io5";
 import { GoMail } from "react-icons/go";
 
 let AboutProduct = () => {
+  const [isActive1, setIsActive1] = useState(true);
+  const [isActive2, setIsActive2] = useState(false);
+  const [isActive3, setIsActive3] = useState(false);
+
   return (
     <div className="flex flex-col px-4 pt-4 animate-Accardion origin-top overflow-hidden">
       <p className="font-[400] mt-2">
@@ -22,17 +26,45 @@ let AboutProduct = () => {
       </p>
 
       <div className="flex items-center gap-4 px-4 mt-4">
-        <div className="p-[.05rem] border-2 border-secondaryBlue rounded-full flex items-center justify-center">
+        <div
+          className={`p-[.05rem] border-2 ${
+            isActive1 ? "border-secondaryBlue" : ""
+          } rounded-full flex items-center justify-center`}
+          onClick={() => {
+            setIsActive1(true);
+            setIsActive2(false);
+            setIsActive3(false);
+          }}
+        >
           <div className="w-10 h-10 bg-[#4B4D4F] rounded-full"></div>
         </div>
-        <div className="p-[.05rem] border-2 border-transparent rounded-full flex items-center justify-center">
+
+        <div
+          className={`p-[.05rem] border-2 ${
+            isActive2 ? "border-secondaryBlue" : ""
+          } rounded-full flex items-center justify-center`}
+          onClick={() => {
+            setIsActive1(false);
+            setIsActive2(true);
+            setIsActive3(false);
+          }}
+        >
           <div className="w-10 h-10 bg-[#EAE8EB] rounded-full"></div>
         </div>
-        <div className="p-[.05rem] border-2 border-transparent rounded-full flex items-center justify-center">
+
+        <div
+          className={`p-[.05rem] border-2 ${
+            isActive3 ? "border-secondaryBlue" : ""
+          } rounded-full flex items-center justify-center`}
+          onClick={() => {
+            setIsActive1(false);
+            setIsActive2(false);
+            setIsActive3(true);
+          }}
+        >
           <div className="w-10 h-10 bg-[#F2E9DC] rounded-full"></div>
         </div>
       </div>
-
       <div className="px-4 mt-2 flex items-center justify-between">
         <p className="text-lg font-semibold flex flex-col justify-center items-center tablet:flex-row">
           Have a Question?
@@ -187,7 +219,7 @@ const ProductPage = ({ data }) => {
                 <div key={index} className="block cursor-pointer">
                   <span
                     activate--data={item.active ? "active" : "deactive"}
-                    onClick={(e) => {
+                    onClick={() => {
                       ProductInformationFunctionHandler(index, item.title);
                     }}
                     className="pb-2 px-2 translate-y-0 text-black font-[550] flex flex-col after:border-b-2 after:border-b-black after:block after:content-[''] transation-all duration-[.5s]"

@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import OurServices from "../components/OurServices";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+  const [isNameRequired, setIsNameRequired] = useState(true);
+  const [isEmailValid, setIsEmailValid] = useState(false);
+
+  const handleNameChange = (event) => {
+    setIsNameRequired(event.target.value === "");
+  };
+
+  const handleEmailChange = (event) => {
+    const emailValue = event.target.value;
+    setIsEmailValid(
+      emailValue === "" ? false : /^\S+@\S+\.\S+$/.test(emailValue)
+    );
+  };
+
   return (
     <div>
       <div className="flex justify-start items-center gap-2 p-4">
@@ -22,21 +36,35 @@ const Register = () => {
 
           <form className="flex flex-col w-full mt-4 gap-2">
             <div className="flex flex-col gap-1">
-              <label htmlFor="Name">Your Name</label>
+              <label htmlFor="Name">
+                Your Name{" "}
+                {isNameRequired ? <span className="text-red-500">*</span> : ""}
+              </label>
               <input
                 className="border-2 p-2 m-auto w-full rounded-lg"
                 type="text"
                 name="Name"
+                id="Name"
                 placeholder="Your Name"
+                required={isNameRequired}
+                onChange={handleNameChange}
               />
             </div>
+
             <div className="flex flex-col gap-1">
-              <label htmlFor="email">Your Email</label>
+              <label htmlFor="email">
+                Your Email{" "}
+                {isEmailValid ? "" : <span className="text-red-500">*</span>}
+              </label>
               <input
                 className="border-2 p-2 m-auto w-full rounded-lg"
                 type="email"
                 name="email"
+                id="email"
                 placeholder="Your Email"
+                required
+                pattern="^\S+@\S+\.\S+$"
+                onChange={handleEmailChange}
               />
             </div>
             <div className="flex justify-between md:justify-center items-center py-4 md:gap-10">
