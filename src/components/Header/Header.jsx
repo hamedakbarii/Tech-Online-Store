@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 // import Logo from "../Logo";
 import NavbarTop from "./NavbarTop";
 import {
@@ -13,6 +13,7 @@ import {
 import HamburgerMenue from "./HamburgerMenu";
 import UserProfileMenu from "./UserProfileMenu";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/cartContext";
 
 export default function Header() {
   // let navUl = [
@@ -27,6 +28,8 @@ export default function Header() {
 
   const [ActiveHamburger, setActiveHamburger] = useState(false);
   const [ActiveUserProfileMenu, setActiveUserProfileMenu] = useState(false);
+
+  const { cartItems } = useContext(CartContext);
 
   return (
     <>
@@ -120,8 +123,13 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Link to="/shoppingcart">
+            <Link to="/shoppingcart" className="relative">
               <ShopingCart />
+              {cartItems.length > 0 && (
+                <span className="absolute -top-4 -right-2 w-5 h-5 bg-white text-[#0156FF] flex justify-center items-center rounded-full text-xs">
+                  {cartItems.length}
+                </span>
+              )}
             </Link>
 
             <UserIcon

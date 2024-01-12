@@ -327,7 +327,7 @@ const ShoppingCartSummerySection = () => {
 
                 <div className="flex items-start gap-3">
                   <input
-                    checked
+                    defaultChecked
                     className="w-5 h-5"
                     type="radio"
                     id="standardrate"
@@ -335,7 +335,7 @@ const ShoppingCartSummerySection = () => {
                     value="standardrate"
                   />
 
-                  <label className="w-full" for="standardrate">
+                  <label className="w-full" htmlFor="standardrate">
                     Price may vary depending on the item/destination. Shop Staff
                     will contact you. $21.00
                   </label>
@@ -354,7 +354,7 @@ const ShoppingCartSummerySection = () => {
                     value="standardrate"
                   />
 
-                  <label className="w-full" for="PickupFromStore">
+                  <label className="w-full" htmlFor="PickupFromStore">
                     1234 Street Adress, City Address, 1234
                   </label>
                 </div>
@@ -370,7 +370,7 @@ const ShoppingCartSummerySection = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label for="discount" className="font-semibold">
+            <label htmlFor="discount" className="font-semibold">
               Enter discount code
             </label>
 

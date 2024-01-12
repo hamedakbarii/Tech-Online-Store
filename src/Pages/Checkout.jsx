@@ -18,9 +18,11 @@ const Checkout = () => {
 
         <h1 className="my-1 text-2xl font-semibold p-2">Checkout</h1>
 
-        <button className="hidden md:block bg-[#0156FF] text-white font-semibold transition-all duration-300 hover:bg-white hover:text-[#0156FF] hover:border-2 border-[#0156FF] py-2 px-12 ml-2 rounded-3xl">
-          Sign In
-        </button>
+        <Link to={"/register"}>
+          <button className="hidden md:block bg-[#0156FF] text-white font-semibold transition-all duration-300 hover:bg-white hover:text-[#0156FF] border-2 border-[#0156FF] py-2 px-12 ml-2 rounded-3xl">
+            Sign In
+          </button>
+        </Link>
 
         <h3 className="border-b my-2 font-semibold p-2">Shipping Address</h3>
 
