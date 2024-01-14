@@ -1,43 +1,66 @@
-import React, { useContext, useState } from "react";
-// import Logo from "../Logo";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import Logo from "../Logo";
 import NavbarTop from "./NavbarTop";
-import {
-  ArrowDown,
-  CloseIcon,
-  Magnfier,
-  UserIcon,
-  ShopingCart,
-  Icon,
-} from "../Icon";
+import { ArrowDown, CloseIcon, Magnfier, UserIcon, Icon } from "../Icon";
+import { IoClose } from "react-icons/io5";
 
 import HamburgerMenue from "./HamburgerMenu";
 import UserProfileMenu from "./UserProfileMenu";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
+import { IoSearch } from "react-icons/io5";
+import { LuShoppingCart } from "react-icons/lu";
 
 export default function Header() {
-  // let navUl = [
-  //   "Laptops",
-  //   "Desktop PCs",
-  //   "Networking devices",
-  //   "Printers & Scanners",
-  //   "Pc parts",
-  //   "All Other Products",
-  //   "Repairs",
-  // ];
+  const navUl = [
+    "Laptops",
+    "Desktop PCs",
+    "Networking devices",
+    "Printers & Scanners",
+    "Pc parts",
+    "All Other Products",
+    "Repairs",
+  ];
 
   const [ActiveHamburger, setActiveHamburger] = useState(false);
   const [ActiveUserProfileMenu, setActiveUserProfileMenu] = useState(false);
+  const [isSearchInputShow, setIsSearchInputShow] = useState(true);
 
   const { cartItems } = useContext(CartContext);
+  const inputRef = useRef();
+
+  useEffect(() => {
+    if (!isSearchInputShow) {
+      inputRef.current.focus();
+    }
+  }, [isSearchInputShow]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSearchInputShow(window.innerWidth >= 1280);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
       <NavbarTop />
 
-      <nav className="w-full block mx-auto px-4 py-2 md:py-6 bg-[#0156FF] sticky top-0 z-20">
+      <nav className="w-full block mx-auto px-4 py-2 md:py-6 bg-[#0156FF] xl:bg-white sticky top-0 z-20 xl:shadow-lg">
         <div className="flex items-center justify-between container md:max-w-full mx-auto px-2 gap-4 w-full">
-          <div className="flex items-center gap-2">
+          <div className="hidden xl:block">
+            <Logo />
+          </div>
+
+          {/* hamnurger menu */}
+          <div className="flex items-center gap-2 xl:hidden">
             <HamburgerMenue HandleHamburgerActivation={setActiveHamburger} />
 
             {ActiveHamburger ? (
@@ -112,21 +135,51 @@ export default function Header() {
             ) : null}
           </div>
 
-          <div className="flex items-center w-full bg-white p-2 py-1 rounded-full">
-            <Magnfier />
+          {/* search input */}
+          {!isSearchInputShow && (
+            <div className="flex items-center w-full bg-white p-2 py-1 rounded-full xl:border">
+              <Magnfier />
 
-            <input
-              className="w-full p-2 focus:outline-0 focus:border-0 bg-transparent"
-              type="search"
-              placeholder="Search Here"
-            />
-          </div>
+              <input
+                ref={inputRef}
+                className="w-full p-2 focus:outline-0 focus:border-0 bg-transparent"
+                type="search"
+                placeholder="Search Here"
+              />
+            </div>
+          )}
+
+          {/* nav ul */}
+          {isSearchInputShow && (
+            <div className="hidden xl:block">
+              <ul className="flex items-center gap-4 text-black font-semibold">
+                {navUl.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+                <button className="border-2 border-[#0156FF] text-[#0156FF] rounded-3xl p-1 px-4">
+                  our deals
+                </button>
+              </ul>
+            </div>
+          )}
 
           <div className="flex items-center gap-2">
+            {isSearchInputShow ? (
+              <IoSearch
+                className="hidden xl:block text-2xl text-black cursor-pointer"
+                onClick={() => setIsSearchInputShow(!isSearchInputShow)}
+              />
+            ) : (
+              <IoClose
+                className="hidden xl:block text-2xl text-black cursor-pointer"
+                onClick={() => setIsSearchInputShow(!isSearchInputShow)}
+              />
+            )}
+
             <Link to="/shoppingcart" className="relative">
-              <ShopingCart />
+              <LuShoppingCart className="text-white text-2xl xl:text-black" />
               {cartItems.length > 0 && (
-                <span className="absolute -top-4 -right-2 w-5 h-5 bg-white text-[#0156FF] flex justify-center items-center rounded-full text-xs">
+                <span className="absolute -top-3 -right-2 w-5 h-5 bg-white xl:bg-[#0156FF] text-[#0156FF] xl:text-white flex justify-center items-center rounded-full text-xs">
                   {cartItems.length}
                 </span>
               )}

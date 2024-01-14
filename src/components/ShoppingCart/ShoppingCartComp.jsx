@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import ShoppingCartSummerySection from "./ShoppingCartSummerySection";
 import CartShoppingCart from "./CartShoppingCart";
 import Ourservices from "../OurServices";
 import { Link, useLocation } from "react-router-dom";
+import { CartContext } from "../../context/cartContext";
 
 const ShoppingCartComp = () => {
   const location = useLocation();
   const thisRoute = location.pathname.replace("/", "");
+
+  const { clearCart } = useContext(CartContext);
+
+  const clearCartHandler = () => {
+    clearCart();
+  };
 
   return (
     <>
@@ -29,7 +36,10 @@ const ShoppingCartComp = () => {
             <button className="hidden md:block bg-black text-white transition-all duration-300 hover:bg-white hover:text-black border-2 border-gray-500 rounded-2xl p-2 font-semibold w-4/5">
               Continue Shopping
             </button>
-            <button className="hidden md:block bg-black text-white transition-all duration-300 hover:bg-white hover:text-black border-2 border-gray-500 rounded-2xl p-2 font-semibold w-4/5">
+            <button
+              className="hidden md:block bg-black text-white transition-all duration-300 hover:bg-white hover:text-black border-2 border-gray-500 rounded-2xl p-2 font-semibold w-4/5"
+              onClick={clearCartHandler}
+            >
               Clear Shopping Cart
             </button>
             <button className="hidden md:block bg-black text-white transition-all duration-300 hover:bg-white hover:text-black border-2 border-gray-500 rounded-2xl p-2 font-semibold w-4/5">

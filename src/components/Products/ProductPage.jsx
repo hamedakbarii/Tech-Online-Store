@@ -431,7 +431,7 @@ const ProductPage = ({ data }) => {
       </div>
 
       {notification !== null && (
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gray-500 text-white rounded-lg p-2 z-10">
+        <div className="fixed top-[80%] left-1/2 transform -translate-x-1/2 bg-gray-500 text-white rounded-lg p-2 z-10">
           {notification}
         </div>
       )}

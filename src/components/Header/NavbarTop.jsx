@@ -1,4 +1,5 @@
 import { ArrowDown, Instagram } from "../Icon";
+import { FaLinkedin } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -56,6 +57,23 @@ const NavbarTop = () => {
           >
             <Link to="/contactus">Contact Us</Link>
           </span>
+
+          <div className="xl:flex justify-center items-center gap-2 hidden">
+            <span>Call Us: (+98 ) 9377550980</span>
+            <div className="flex gap-2">
+              <Link
+                to={
+                  "https://www.instagram.com/hamedakbrii/?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D"
+                }
+              >
+                <Instagram />
+              </Link>
+
+              <Link to={"https://www.linkedin.com/in/hamedakbarii"}>
+                <FaLinkedin />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

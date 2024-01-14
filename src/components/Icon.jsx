@@ -228,7 +228,7 @@ function UserIcon({ HandleUserDataShow, UserDataShow }) {
       onClick={() => {
         UserDataShow ? HandleUserDataShow(false) : HandleUserDataShow(true);
       }}
-      className="cursor-pointer"
+      className="cursor-pointer xl:fill-[#0156FF]"
     >
       <circle cx="16" cy="16" r="15" stroke="#fff" strokeWidth="2"></circle>
       <path
