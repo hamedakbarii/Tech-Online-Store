@@ -156,7 +156,7 @@ export default function Header() {
                 {navUl.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
-                <button className="border-2 border-[#0156FF] text-[#0156FF] rounded-3xl p-1 px-4">
+                <button className="border-2 border-[#0156FF] text-[#0156FF] rounded-3xl p-1 px-4 transition-all duration-300 hover:bg-[#0156FF] hover:text-white">
                   our deals
                 </button>
               </ul>

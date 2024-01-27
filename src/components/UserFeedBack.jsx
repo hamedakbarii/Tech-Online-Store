@@ -35,7 +35,7 @@ let UserFeedBackData = [
 
 let UserFeedBack = () => {
   return (
-    <div className="container md:max-w-[95%] mx-auto px-4 md:px-0 my-4">
+    <div className="container md:max-w-[95%] xl:max-w-[70%] mx-auto px-4 md:px-0 my-4">
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         spaceBetween={50}

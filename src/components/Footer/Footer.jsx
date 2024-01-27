@@ -68,32 +68,125 @@ let Address = [
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[#020203] p-4">
-        <div className="flex justify-center items-center">
-          <div className="flex justify-center items-center flex-col">
-            <p className="font-semibold text-white text-2xl">
-              Sign Up To Our Newsletter.
-            </p>
+      <footer className="bg-[#020203] p-4 w-full">
+        <div className=" w-11/12 mx-auto">
+          <div className="flex flex-col xl:flex-row items-center w-full">
+            <div className="flex justify-between items-center w-full">
+              <div className="flex justify-center items-center xl:items-start flex-col">
+                <p className="font-semibold text-white text-2xl xl:text-3xl">
+                  Sign Up To Our Newsletter.
+                </p>
 
-            <p className="font-light text-white mt-4">
-              Be the first to hear about the latest offers.
-            </p>
+                <p className="font-light text-white mt-4 xl:text-sm xl:mt-1 xl:text-gray-500">
+                  Be the first to hear about the latest offers.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-4 px-2 flex justify-evenly items-center gap-2 w-full">
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="pl-2 bg-transparent border-solid border-2 text-PrimaryGray placeholder:text-PrimaryGray rounded py-2 w-3/5 xl:"
+              />
+
+              <button className="text-white bg-[#0156FF] py-2 w-2/5 text-lg font-semibold rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF]">
+                Subscribe
+              </button>
+            </div>
+          </div>
+
+          {/* xl device ul items */}
+          <div className="hidden xl:flex justify-between items-start w-full py-10 border-b border-gray-500 mx-auto">
+            <div>
+              <span className="text-gray-500 font-semibold">
+                {Information[0].title}
+              </span>
+
+              <ul className="pt-10">
+                {Information[0].accardionContent.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-gray-300 transition-all duration-300 hover:opacity-70"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <span className="text-gray-500 font-semibold">
+                {Accardion[0].title}
+              </span>
+
+              <ul className="pt-10">
+                {Accardion[0].accardionContent.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-gray-300 transition-all duration-300 hover:opacity-70"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <span className="text-gray-500 font-semibold">
+                {DesktopPCs[0].title}
+              </span>
+
+              <ul className="pt-10">
+                {DesktopPCs[0].accardionContent.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-gray-300 transition-all duration-300 hover:opacity-70"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <span className="text-gray-500 font-semibold">
+                {LaptopAccardion[0].title}
+              </span>
+
+              <ul className="pt-10">
+                {LaptopAccardion[0].accardionContent.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-gray-300 transition-all duration-300 hover:opacity-70"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <span className="text-gray-500 font-semibold">
+                {Address[0].title}
+              </span>
+
+              <ul className="pt-10">
+                {Address[0].accardionContent.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-gray-300 transition-all duration-300 hover:opacity-70"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="pt-4 px-2 flex justify-evenly items-center gap-2">
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="pl-2 bg-transparent border-solid border-2 text-PrimaryGray placeholder:text-PrimaryGray rounded py-2 w-3/5"
-          />
-
-          <button className="text-white bg-[#0156FF] py-2 w-2/5 text-lg font-semibold rounded-3xl transition-all ease-in-out duration-300 hover:bg-white hover:text-[#0156FF]">
-            Subscribe
-          </button>
-        </div>
-
-        <div className="flex flex-col justify-center items-center p-2 px-6 gap-6 mt-4">
+        {/* smaller device ul items ( with Accardion ) */}
+        <div className="flex flex-col justify-center items-center p-2 px-6 gap-6 mt-4 xl:hidden">
           <div className="flex flex-col border-b-[#A2A6B0] border-b-[1px] cursor-pointer w-full">
             <AccardionSection Data={Information} key="accardion information" />
           </div>
